@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".SummaryActivity" />
-        <activity android:name=".FoodExerciseActivity"></activity>
+        <activity android:name=".FoodExerciseActivity" />
+        <activity android:name=".TrackingActivity" />
+        <activity android:name=".FoodFactActivity"></activity>
     </application>
 
 </manifest>
