@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_daily_journal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.nicha.finalproject.DailyJournalActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:background="@drawable/bg_dailyjournal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="26dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"
+        android:layout_marginTop="16dp"
+        android:textStyle="italic"
+        android:text="Daily journal "/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="16dp"
+        android:text="Calories intake "/>
+
+
+    <LinearLayout
+        android:id="@+id/layout_CalIntake"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#80000000"
+        android:padding="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="90dp">
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/icCarb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_carb"/>
+
+            <TextView
+                android:layout_toRightOf="@id/icCarb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carbohydrate"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:textColor="#ffffff"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/tvShowCarb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="8dp" android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:text="0 g."/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <ImageView
+                android:id="@+id/icFat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/ic_fat"/>
+
+            <TextView
+                android:layout_toRightOf="@id/icFat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fat"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:textColor="#ffffff"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/tvShowFat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="8dp"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:text="0 g."/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <ImageView
+                android:id="@+id/icProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/ic_protein"/>
+
+            <TextView
+                android:layout_toRightOf="@id/icProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Protein"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:textColor="#ffffff"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/tvShowProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="8dp"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:text="0 g."/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_below="@id/layout_CalIntake"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#80000000"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvBreakfast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Breakfast"
+                android:layout_marginLeft="8dp"
+                android:textColor="#ffffff"
+                android:textSize="18dp"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_add"
+                android:layout_marginTop="3dp"
+                android:layout_alignParentRight="true"/>
+
+            <TextView
+                android:id="@+id/tvShowBreakfast"
+                android:layout_below="@id/tvBreakfast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="showing food which is selected"
+                android:textColor="#FFF59D"
+                android:textSize="15dp"/>
+
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvLunch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lunch"
+
+                android:layout_marginLeft="8dp"
+                android:textColor="#ffffff"
+                android:textSize="18dp"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_add"
+                android:layout_marginTop="3dp"
+                android:layout_alignParentRight="true"/>
+            <TextView
+                android:id="@+id/tvShowLunch"
+                android:layout_below="@id/tvLunch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="showing food which is selected"
+                android:textColor="#FFF59D"
+                android:textSize="15dp"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvDinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dinner"
+
+                android:layout_marginLeft="8dp"
+                android:textColor="#ffffff"
+                android:textSize="18dp"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_add"
+                android:layout_marginTop="3dp"
+                android:layout_alignParentRight="true"/>
+            <TextView
+                android:id="@+id/tvShowDinner"
+                android:layout_below="@id/tvDinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="showing food which is selected"
+                android:textColor="#FFF59D"
+                android:textSize="15dp"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvWorkout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Work out"
+
+                android:layout_marginLeft="8dp"
+                android:textColor="#ffffff"
+                android:textSize="18dp"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_add"
+                android:layout_marginTop="3dp"
+                android:layout_alignParentRight="true"/>
+
+            <TextView
+                android:layout_below="@id/tvWorkout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="showing exercise which is selected"
+                android:textColor="#FFF59D"
+                android:textSize="15dp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+        
+
+</RelativeLayout>
