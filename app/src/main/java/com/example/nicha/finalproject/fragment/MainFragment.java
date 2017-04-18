@@ -30,7 +30,7 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.activity_daily_journal, container, false);
+        View rootView = inflater.inflate(R.layout.activity_main, container, false);
         initInstances(rootView);
         return rootView;
     }

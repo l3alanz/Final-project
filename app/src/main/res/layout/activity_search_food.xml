@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_search_food"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.nicha.finalproject.SearchFoodActivity">
+
+    <ImageView
+        android:id="@+id/ivSearchFood"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/bg_searchfood"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="26dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"
+        android:layout_marginTop="16dp"
+        android:textStyle="italic"
+        android:text="Food "/>
+
+    <SearchView
+        android:id="@+id/svSearchFood"
+        android:layout_width="match_parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="120dp"
+        android:layout_height="wrap_content"
+        android:queryHint="search food"
+        android:background="#ffffff">
+
+    </SearchView>
+
+    <!--For showing the food after searching-->
+    <!--If not found Show the message Searching not found -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ivSearchFood">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvFood1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:text="food1"/>
+    <TextView
+        android:id="@+id/tvFood2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvFood1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:text="food2"/>
+    <TextView
+        android:id="@+id/tvFood3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvFood2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:text="food3"/>
+    <TextView
+        android:id="@+id/tvFood4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvFood3"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:text="food4"/>
+
+    <TextView
+        android:id="@+id/tvFood5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvFood4"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:text="food5"/>
+
+    <TextView
+        android:id="@+id/tvFood6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvFood5"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:text="food6"/>
+
+    <TextView
+        android:id="@+id/tvFood7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvFood6"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:text="food7"/>
+    <TextView
+        android:id="@+id/tvFood8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvFood7"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:text="food8"/>
+    <TextView
+        android:id="@+id/tvFood9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvFood8"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:text="food9"/>
+    <TextView
+        android:id="@+id/tvFood10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvFood9"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:text="food10"/>
+    <TextView
+        android:id="@+id/tvFood11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvFood10"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:text="food11"/>
+
+
+
+
+    </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.nicha.finalproject.activity;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
@@ -8,10 +9,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.nicha.finalproject.DailyJournalActivity;
+import com.example.nicha.finalproject.FoodExerciseActivity;
 import com.example.nicha.finalproject.R;
+import com.example.nicha.finalproject.RecommendationActivity;
+import com.example.nicha.finalproject.SearchExerciseActivity;
+import com.example.nicha.finalproject.SearchFoodActivity;
+import com.example.nicha.finalproject.SettingActivity;
+import com.example.nicha.finalproject.SummaryActivity;
+import com.example.nicha.finalproject.TrackingActivity;
 import com.example.nicha.finalproject.fragment.MainFragment;
+
+import static com.example.nicha.finalproject.R.id.btnGoFoodEx;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +36,86 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button btnGoSetting;
+        Button btnGoSummary;
+        Button btnGoDaily;
+        Button btnGoFoodEx;
+        Button btnGoTracking;
+        Button btnGoRecommendation;
+        btnGoSetting = (Button) findViewById(R.id.btnGoSetting);
+        btnGoSummary = (Button) findViewById(R.id.btnGoSummary);
+        btnGoDaily = (Button) findViewById(R.id.btnGoDaily);
+        btnGoFoodEx = (Button) findViewById(R.id.btnGoFoodEx);
+        btnGoTracking = (Button) findViewById(R.id.btnGoTracking);
+        btnGoRecommendation = (Button) findViewById(R.id.btnGoRecommendation);
+
+
+        btnGoSetting.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(MainActivity.this,
+                        SettingActivity.class);
+                startActivity(intent1);
+
+            }
+        });
+
+        btnGoSummary.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(MainActivity.this,
+                        SummaryActivity.class);
+                startActivity(intent2);
+
+            }
+        });
+
+        btnGoDaily.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent3 = new Intent(MainActivity.this,
+                        DailyJournalActivity.class);
+                startActivity(intent3);
+
+            }
+        });
+
+        btnGoFoodEx.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent4 = new Intent(MainActivity.this,
+                        FoodExerciseActivity.class);
+                startActivity(intent4);
+
+            }
+        });
+
+        btnGoRecommendation.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent4 = new Intent(MainActivity.this,
+                        RecommendationActivity.class);
+                startActivity(intent4);
+
+            }
+        });
+
+        btnGoTracking.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent5 = new Intent(MainActivity.this,
+                        TrackingActivity.class);
+                startActivity(intent5);
+
+            }
+        });
 
         initInstances();
 

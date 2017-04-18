@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_search_food"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.nicha.finalproject.SearchFoodActivity">
+
+    <ImageView
+        android:id="@+id/ivSearchExercise"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/bg_serchexercise"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="26dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"
+        android:layout_marginTop="16dp"
+        android:textStyle="italic"
+        android:text="Exercise"/>
+
+    <SearchView
+        android:id="@+id/svSearchExercise"
+        android:layout_width="match_parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="120dp"
+        android:layout_height="wrap_content"
+        android:queryHint="search food"
+        android:background="#ffffff">
+
+    </SearchView>
+
+    <!--For showing the food after searching-->
+    <!--If not found Show the message Searching not found -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ivSearchExercise">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvEx1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:text="Exercise1"/>
+            <TextView
+                android:id="@+id/tvEx2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvEx1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:text="Exercise2"/>
+            <TextView
+                android:id="@+id/tvEx3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvEx2"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:text="Exercise3"/>
+            <TextView
+                android:id="@+id/tvEx4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvEx3"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:text="Exercise4"/>
+
+            <TextView
+                android:id="@+id/tvEx5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvEx4"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:text="Exercise5"/>
+
+            <TextView
+                android:id="@+id/tvEx6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvEx5"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:text="Exercise6"/>
+
+            <TextView
+                android:id="@+id/tvEx7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvEx6"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:text="Exercise7"/>
+            <TextView
+                android:id="@+id/tvEx8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvEx7"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:text="Exercise8"/>
+            <TextView
+                android:id="@+id/tvEx9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvEx8"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:text="Exercise9"/>
+            <TextView
+                android:id="@+id/tvEx10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvEx9"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:text="Exercise10"/>
+            <TextView
+                android:id="@+id/tvEx11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvEx10"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:text="Exercise11"/>
+
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
