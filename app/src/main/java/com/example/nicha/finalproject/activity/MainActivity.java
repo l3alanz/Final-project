@@ -2,6 +2,7 @@ package com.example.nicha.finalproject.activity;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -11,26 +12,26 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.nicha.finalproject.DailyJournalActivity;
 import com.example.nicha.finalproject.FoodExerciseActivity;
 import com.example.nicha.finalproject.R;
 import com.example.nicha.finalproject.RecommendationActivity;
-import com.example.nicha.finalproject.SearchExerciseActivity;
-import com.example.nicha.finalproject.SearchFoodActivity;
 import com.example.nicha.finalproject.SettingActivity;
 import com.example.nicha.finalproject.SummaryActivity;
 import com.example.nicha.finalproject.TrackingActivity;
+import com.example.nicha.finalproject.Service.Database;
 import com.example.nicha.finalproject.fragment.MainFragment;
 
-import static com.example.nicha.finalproject.R.id.btnGoFoodEx;
 
 public class MainActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle; // Hamburger button
     Toolbar toolbar;
+    SQLiteDatabase mDb;
+    Database mHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
                     .add(R.id.contentContainer, MainFragment.newInstance())
                     .commit();
         }
+
 
     }
 

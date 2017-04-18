@@ -2,6 +2,7 @@ package com.example.nicha.finalproject;
 
 import android.app.Application;
 
+import com.example.nicha.finalproject.Service.ActivityDataService;
 import com.inthecheesefactory.thecheeselibrary.manager.Contextor;
 
 /**
@@ -16,6 +17,7 @@ public class MainApplication extends Application {
 
         // Initialize things here
         Contextor.getInstance().init(getApplicationContext());
+
     }
 
     @Override
