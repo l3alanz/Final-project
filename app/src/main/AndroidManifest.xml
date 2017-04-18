@@ -9,6 +9,12 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.awareness.API_KEY"
+            android:value="AIzaSyAni7AcHJRfYqHVaPRk-CZ56fQ4s8rYE9Q" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAni7AcHJRfYqHVaPRk-CZ56fQ4s8rYE9Q" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
