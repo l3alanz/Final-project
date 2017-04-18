@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.example.nicha.finalproject.Model.ActivityData;
 import com.example.nicha.finalproject.Model.ActivityRecord;
@@ -272,24 +273,22 @@ public class Database extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + Dewy.TABLE_NAME);
         onCreate(db);
     }
-
-    public List<String> getFoodData(){
-        List<String> foods = new ArrayList<String>();
+    public List<String> getActivityDataList(){
+        List<String> activities = new ArrayList<String>();
         mDb = this.getWritableDatabase();
-        Cursor cursor = mDb.rawQuery("SELECT " + FoodData.Column.COL_ITEM_NAME + ", "
-                + FoodData.Column.COL_CALORIES  + " FROM " + FoodData.TABLE_NAME, null);
+        Cursor cursor = mDb.rawQuery("SELECT " + ActivityData.Column.activityName +
+                " FROM " + ActivityData.TABLE_NAME, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
 
         while ( !cursor.isAfterLast() ){
-            foods.add("Name : " + cursor.getString
-                    (cursor.getColumnIndex(FoodData.Column.COL_ITEM_NAME)) + "\n"
-                    + "Calories : " + cursor.getString(cursor.getColumnIndex
-                    (FoodData.Column.COL_CALORIES)));
+            activities.add("Name : " + cursor.getString
+                    (cursor.getColumnIndex(ActivityData.Column.activityName)));
+            Log.i("Test1", String.valueOf(activities));
             cursor.moveToNext();
         }
         mDb.close();
-        return foods;
+        return activities;
     }
 }

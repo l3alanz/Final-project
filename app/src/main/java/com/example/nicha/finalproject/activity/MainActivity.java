@@ -1,6 +1,7 @@
 package com.example.nicha.finalproject.activity;
 
 import android.content.res.Configuration;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -11,13 +12,21 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.nicha.finalproject.R;
+import com.example.nicha.finalproject.Service.ActivityDataService;
+import com.example.nicha.finalproject.Service.Database;
+import com.example.nicha.finalproject.Service.FoodDataService;
 import com.example.nicha.finalproject.fragment.MainFragment;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle; // Hamburger button
     Toolbar toolbar;
+    SQLiteDatabase mDb;
+    Database mHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
                     .add(R.id.contentContainer, MainFragment.newInstance())
                     .commit();
         }
+
 
     }
 
