@@ -27,22 +27,67 @@ public class FoodDataService {
         mHelper = new Database(ctx);
     }
 
-    public List<String> getFoodDataList(){
+    public List<String> getFoodDefaultList(){
         List<String> foods = new ArrayList<String>();
-        mDb = mHelper.getWritableDatabase();
+        mDb = mHelper.getReadableDatabase();
         Cursor cursor = mDb.rawQuery("SELECT " + FoodData.Column.COL_ITEM_NAME +
-                 " FROM " + FoodData.TABLE_NAME + " WHERE _id = 50 ", null);
+                 " FROM " + FoodData.TABLE_NAME, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
 
         while ( !cursor.isAfterLast() ){
-            foods.add("Name : " + cursor.getString
+            foods.add(cursor.getString
                     (cursor.getColumnIndex(FoodData.Column.COL_ITEM_NAME)));
-            Log.i("Test1", String.valueOf(foods));
             cursor.moveToNext();
         }
         mDb.close();
+        mHelper.close();
         return foods;
+    }
+
+    public List<String> getFoodDataList(String searchItem){
+        List<String> foods = new ArrayList<String>();
+        mDb = mHelper.getReadableDatabase();
+        Cursor cursor = mDb.rawQuery("SELECT " + FoodData.Column.COL_ITEM_NAME +
+                " FROM " + FoodData.TABLE_NAME + " WHERE " + FoodData.Column.COL_ITEM_NAME + " LIKE '" + searchItem + "%' " , null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+
+        while ( !cursor.isAfterLast() ){
+            foods.add(cursor.getString
+                    (cursor.getColumnIndex(FoodData.Column.COL_ITEM_NAME)));
+            cursor.moveToNext();
+        }
+        mDb.close();
+        mHelper.close();
+        return foods;
+    }
+
+    public List<String> getFood(String searchItem){
+        List<String> food = new ArrayList<String>();
+        mDb = mHelper.getReadableDatabase();
+
+        Cursor cursor = mDb.rawQuery("SELECT * " +
+                " FROM " + FoodData.TABLE_NAME + " WHERE " + FoodData.Column.COL_ITEM_NAME + " = '" + searchItem + "' " , null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        while ( !cursor.isAfterLast() ){
+            for(int i=0; i<cursor.getColumnCount();i++)
+            {
+                if(i != 32) {
+                    food.add(cursor.getString(i) + "//");
+                }
+                else {
+                    food.add(cursor.getString(i));
+                }
+            }
+            cursor.moveToNext();
+        }
+        mDb.close();
+        mHelper.close();
+        return food;
     }
 }

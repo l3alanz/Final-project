@@ -9,6 +9,8 @@ import android.widget.ImageButton;
 
 import static com.example.nicha.finalproject.R.id.btnFood;
 
+import com.example.nicha.finalproject.activity.MainActivity;
+
 public class DailyJournalActivity extends AppCompatActivity {
 
     @Override
@@ -20,7 +22,7 @@ public class DailyJournalActivity extends AppCompatActivity {
         ImageButton btnAddLunch;
         ImageButton btnAddDinner;
         ImageButton btnAddExercise;
-
+/*
         btnAddBreakfast = (ImageButton) findViewById(R.id.btnAddBreakfast);
         btnAddLunch = (ImageButton) findViewById(R.id.btnAddLunch);
         btnAddDinner = (ImageButton) findViewById(R.id.btnAddDinner);
@@ -69,6 +71,6 @@ public class DailyJournalActivity extends AppCompatActivity {
 
             }
         });
-
+*/
     }
 }

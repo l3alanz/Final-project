@@ -12,6 +12,262 @@ public class FoodData {
     private static final int DB_VERSION = 1;
     public static final String TABLE_NAME = "foodData";
 
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public String getAmountPerServing() {
+        return amountPerServing;
+    }
+
+    public void setAmountPerServing(String amountPerServing) {
+        this.amountPerServing = amountPerServing;
+    }
+
+    public double getCalories() {
+        return calories;
+    }
+
+    public void setCalories(double calories) {
+        this.calories = calories;
+    }
+
+    public String getCaloriesFromFat() {
+        return caloriesFromFat;
+    }
+
+    public void setCaloriesFromFat(String caloriesFromFat) {
+        this.caloriesFromFat = caloriesFromFat;
+    }
+
+    public double getTotalFat() {
+        return totalFat;
+    }
+
+    public void setTotalFat(double totalFat) {
+        this.totalFat = totalFat;
+    }
+
+    public String getPercentDailyOfFat() {
+        return percentDailyOfFat;
+    }
+
+    public void setPercentDailyOfFat(String percentDailyOfFat) {
+        this.percentDailyOfFat = percentDailyOfFat;
+    }
+
+    public String getSaturatedFat() {
+        return saturatedFat  + " g.";
+    }
+
+    public void setSaturatedFat(String saturatedFat) {
+        this.saturatedFat = saturatedFat;
+    }
+
+    public String getPercentDailyOfSaturatedFat() {
+        return percentDailyOfSaturatedFat;
+    }
+
+    public void setPercentDailyOfSaturatedFat(String percentDailyOfSaturatedFat) {
+        this.percentDailyOfSaturatedFat = percentDailyOfSaturatedFat;
+    }
+
+    public String getMonoSaturatedFat() {
+        return monoSaturatedFat  + " g.";
+    }
+
+    public void setMonoSaturatedFat(String monoSaturatedFat) {
+        this.monoSaturatedFat = monoSaturatedFat;
+    }
+
+    public String getPolySaturatedFat() {
+        return polySaturatedFat  + " g.";
+    }
+
+    public void setPolySaturatedFat(String polySaturatedFat) {
+        this.polySaturatedFat = polySaturatedFat;
+    }
+
+    public String getTranFat() {
+        return tranFat  + " g.";
+    }
+
+    public void setTranFat(String tranFat) {
+        this.tranFat = tranFat;
+    }
+
+    public String getCholesterol() {
+        return cholesterol  + " mg.";
+    }
+
+    public void setCholesterol(String cholesterol) {
+        this.cholesterol = cholesterol;
+    }
+
+    public String getPercentDailyCholesterol() {
+        return percentDailyCholesterol;
+    }
+
+    public void setPercentDailyCholesterol(String percentDailyCholesterol) {
+        this.percentDailyCholesterol = percentDailyCholesterol;
+    }
+
+    public String getSodium() {
+        return sodium  + " mg.";
+    }
+
+    public void setSodium(String sodium) {
+        this.sodium = sodium;
+    }
+
+    public String getPercentDailyOfSodium() {
+        return percentDailyOfSodium;
+    }
+
+    public void setPercentDailyOfSodium(String percentDailyOfSodium) {
+        this.percentDailyOfSodium = percentDailyOfSodium;
+    }
+
+    public String getPotassium() {
+        return potassium  + " mg.";
+    }
+
+    public void setPotassium(String potassium) {
+        this.potassium = potassium;
+    }
+
+    public String getPercentDailyOfPotassium() {
+        return percentDailyOfPotassium;
+    }
+
+    public void setPercentDailyOfPotassium(String percentDailyOfPotassium) {
+        this.percentDailyOfPotassium = percentDailyOfPotassium;
+    }
+
+    public double getCarb() {
+        return carb;
+    }
+
+    public void setCarb(double carb) {
+        this.carb = carb;
+    }
+
+    public String getPercentDailyOfCarb() {
+        return percentDailyOfCarb;
+    }
+
+    public void setPercentDailyOfCarb(String percentDailyOfCarb) {
+        this.percentDailyOfCarb = percentDailyOfCarb;
+    }
+
+    public String getFiber() {
+        return fiber  + " g.";
+    }
+
+    public void setFiber(String fiber) {
+        this.fiber = fiber;
+    }
+
+    public String getPercentDailyOfFiber() {
+        return percentDailyOfFiber;
+    }
+
+    public void setPercentDailyOfFiber(String percentDailyOfFiber) {
+        this.percentDailyOfFiber = percentDailyOfFiber;
+    }
+
+    public String getSugar() {
+        return sugar  + " g.";
+    }
+
+    public void setSugar(String sugar) {
+        this.sugar = sugar;
+    }
+
+    public double getProtein() {
+        return protein;
+    }
+
+    public void setProtein(double protein) {
+        this.protein = protein;
+    }
+
+    public String getPercentDailyOfProtein() {
+        return percentDailyOfProtein;
+    }
+
+    public void setPercentDailyOfProtein(String percentDailyOfProtein) {
+        this.percentDailyOfProtein = percentDailyOfProtein;
+    }
+
+    public String getVitaminA() {
+        return vitaminA;
+    }
+
+    public void setVitaminA(String vitaminA) {
+        this.vitaminA = vitaminA;
+    }
+
+    public String getVitaminC() {
+        return vitaminC;
+    }
+
+    public void setVitaminC(String vitaminC) {
+        this.vitaminC = vitaminC;
+    }
+
+    public String getCalcium() {
+        return calcium;
+    }
+
+    public void setCalcium(String calcium) {
+        this.calcium = calcium;
+    }
+
+    public String getIron() {
+        return iron;
+    }
+
+    public void setIron(String iron) {
+        this.iron = iron;
+    }
+
+    public String getVitaminD() {
+        return vitaminD;
+    }
+
+    public void setVitaminD(String vitaminD) {
+        this.vitaminD = vitaminD;
+    }
+
+    public String getVitaminB6() {
+        return vitaminB6;
+    }
+
+    public void setVitaminB6(String vitaminB6) {
+        this.vitaminB6 = vitaminB6;
+    }
+
+    public String getVitaminB12() {
+        return vitaminB12;
+    }
+
+    public void setVitaminB12(String vitaminB12) {
+        this.vitaminB12 = vitaminB12;
+    }
+
+    public String getMagnesium() {
+        return magnesium;
+    }
+
+    public void setMagnesium(String magnesium) {
+        this.magnesium = magnesium;
+    }
+
     public class Column{
         public static final String COL_ID = BaseColumns._ID;
         public static final String COL_ITEM_NAME = "itemName";
@@ -121,136 +377,6 @@ public class FoodData {
         this.magnesium = magnesium;
     }
 
-    public String getItemName() {
-        return itemName;
-    }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
-
-    public String getAmountPerServing() {
-        return amountPerServing;
-    }
-
-    public double getCalories() {
-        return calories;
-    }
-
-    public String getCaloriesFromFat() {
-        return caloriesFromFat;
-    }
-
-    public double getTotalFat() {
-        return totalFat;
-    }
-
-    public String getPercentDailyOfFat() {
-        return percentDailyOfFat;
-    }
-
-    public String getSaturatedFat() {
-        return saturatedFat;
-    }
-
-    public String getPercentDailyOfSaturatedFat() {
-        return percentDailyOfSaturatedFat;
-    }
-
-    public String getMonoSaturatedFat() {
-        return monoSaturatedFat;
-    }
-
-    public String getPolySaturatedFat() {
-        return polySaturatedFat;
-    }
-
-    public String getTranFat() {
-        return tranFat;
-    }
-
-    public String getCholesterol() {
-        return cholesterol;
-    }
-
-    public String getPercentDailyCholesterol() {
-        return percentDailyCholesterol;
-    }
-
-    public String getSodium() {
-        return sodium;
-    }
-
-    public String getPercentDailyOfSodium() {
-        return percentDailyOfSodium;
-    }
-
-    public String getPotassium() {
-        return potassium;
-    }
-
-    public String getPercentDailyOfPotassium() {
-        return percentDailyOfPotassium;
-    }
-
-    public double getCarb() {
-        return carb;
-    }
-
-    public String getPercentDailyOfCarb() {
-        return percentDailyOfCarb;
-    }
-
-    public String getFiber() {
-        return fiber;
-    }
-
-    public String getPercentDailyOfFiber() {
-        return percentDailyOfFiber;
-    }
-
-    public String getSugar() {
-        return sugar;
-    }
-
-    public double getProtein() {
-        return protein;
-    }
-
-    public String getPercentDailyOfProtein() {
-        return percentDailyOfProtein;
-    }
-
-    public String getVitaminA() {
-        return vitaminA;
-    }
-
-    public String getVitaminC() {
-        return vitaminC;
-    }
-
-    public String getCalcium() {
-        return calcium;
-    }
-
-    public String getIron() {
-        return iron;
-    }
-
-    public String getVitaminD() {
-        return vitaminD;
-    }
-
-    public String getVitaminB6() {
-        return vitaminB6;
-    }
-
-    public String getVitaminB12() {
-        return vitaminB12;
-    }
-
-    public String getMagnesium() {
-        return magnesium;
-    }
 
 }

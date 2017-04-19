@@ -24,10 +24,9 @@ public class ActivityDataService  {
         this.ctx = ctx;
         mHelper = new Database(ctx);
     }
-
-    public List<String> getActivityDataList(){
+    public List<String> getActivityDefaultList(){
         List<String> activities = new ArrayList<String>();
-        mDb = mHelper.getWritableDatabase();
+        mDb = mHelper.getReadableDatabase();
         Cursor cursor = mDb.rawQuery("SELECT " + ActivityData.Column.activityName +
                 " FROM " + ActivityData.TABLE_NAME, null);
         if (cursor != null) {
@@ -35,11 +34,31 @@ public class ActivityDataService  {
         }
 
         while ( !cursor.isAfterLast() ){
-            activities.add("Name : " + cursor.getString
+            activities.add(cursor.getString
                     (cursor.getColumnIndex(ActivityData.Column.activityName)));
             cursor.moveToNext();
         }
         mDb.close();
+        mHelper.close();
+        return activities;
+    }
+
+    public List<String> getActivityDataList(String searchItem){
+        List<String> activities = new ArrayList<String>();
+        mDb = mHelper.getReadableDatabase();
+        Cursor cursor = mDb.rawQuery("SELECT " + ActivityData.Column.activityName +
+                " FROM " + ActivityData.TABLE_NAME + " WHERE " + ActivityData.Column.activityName + " LIKE '" + searchItem + "%' " , null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+
+        while ( !cursor.isAfterLast() ){
+            activities.add(cursor.getString
+                    (cursor.getColumnIndex(ActivityData.Column.activityName)));
+            cursor.moveToNext();
+        }
+        mDb.close();
+        mHelper.close();
         return activities;
     }
 }

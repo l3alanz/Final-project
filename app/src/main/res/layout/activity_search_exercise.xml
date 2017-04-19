@@ -29,140 +29,24 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="120dp"
         android:layout_height="wrap_content"
-        android:queryHint="search food"
+        android:queryHint="search exercise"
+        android:showAsAction="always"
+        android:iconifiedByDefault="false"
         android:background="#ffffff">
 
     </SearchView>
 
-    <!--For showing the food after searching-->
-    <!--If not found Show the message Searching not found -->
-
-    <ScrollView
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/ivSearchExercise">
+        android:layout_below="@id/ivSearchExercise"
+        android:layout_alignLeft="@+id/svSearchExercise"
+        android:layout_alignStart="@+id/svSearchExercise"
+        android:layout_alignRight="@+id/svSearchExercise"
+        android:layout_alignEnd="@+id/svSearchExercise"
+        android:id="@+id/tvEx" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/tvEx1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="16dp"
-                android:textSize="20dp"
-                android:textColor="#000000"
-                android:text="Exercise1"/>
-            <TextView
-                android:id="@+id/tvEx2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvEx1"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="16dp"
-                android:textSize="20dp"
-                android:textColor="#000000"
-                android:text="Exercise2"/>
-            <TextView
-                android:id="@+id/tvEx3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvEx2"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="16dp"
-                android:textSize="20dp"
-                android:textColor="#000000"
-                android:text="Exercise3"/>
-            <TextView
-                android:id="@+id/tvEx4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvEx3"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="16dp"
-                android:textSize="20dp"
-                android:textColor="#000000"
-                android:text="Exercise4"/>
-
-            <TextView
-                android:id="@+id/tvEx5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvEx4"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="16dp"
-                android:textSize="20dp"
-                android:textColor="#000000"
-                android:text="Exercise5"/>
-
-            <TextView
-                android:id="@+id/tvEx6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvEx5"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="16dp"
-                android:textSize="20dp"
-                android:textColor="#000000"
-                android:text="Exercise6"/>
-
-            <TextView
-                android:id="@+id/tvEx7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvEx6"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="16dp"
-                android:textSize="20dp"
-                android:textColor="#000000"
-                android:text="Exercise7"/>
-            <TextView
-                android:id="@+id/tvEx8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvEx7"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="16dp"
-                android:textSize="20dp"
-                android:textColor="#000000"
-                android:text="Exercise8"/>
-            <TextView
-                android:id="@+id/tvEx9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvEx8"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="16dp"
-                android:textSize="20dp"
-                android:textColor="#000000"
-                android:text="Exercise9"/>
-            <TextView
-                android:id="@+id/tvEx10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvEx9"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="16dp"
-                android:textSize="20dp"
-                android:textColor="#000000"
-                android:text="Exercise10"/>
-            <TextView
-                android:id="@+id/tvEx11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvEx10"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="16dp"
-                android:textSize="20dp"
-                android:textColor="#000000"
-                android:text="Exercise11"/>
-
-
-
-
-        </RelativeLayout>
-    </ScrollView>
+    <!--For showing the food after searching-->
+    <!--If not found Show the message Searching not found -->
 
 </RelativeLayout>
