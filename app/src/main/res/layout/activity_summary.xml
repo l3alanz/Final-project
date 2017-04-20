@@ -49,7 +49,7 @@
                     android:textSize="20sp"
                     android:layout_marginTop="30dp"
                     android:textColor="#ffffff"
-                    android:text="ShowGoal"/>
+                    android:text="0"/>
 
                 <TextView
                     android:id="@+id/tvGoal"
@@ -69,7 +69,7 @@
                     android:layout_marginTop="30dp"
                     android:textColor="#ffffff"
                     android:textSize="20sp"
-                    android:text="Show Burn"/>
+                    android:text="0"/>
 
 
                 <TextView
@@ -84,16 +84,6 @@
                     android:text="Burned"/>
 
                 <TextView
-                    android:id="@+id/tvShowฺConsumed"
-                    android:layout_width="wrap_content"
-                    android:layout_below="@id/tvGoal"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:textSize="20sp"
-                    android:textColor="#ffffff"
-                    android:text="ShowConsumed"/>
-
-                <TextView
                     android:id="@+id/tvConsumed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -104,7 +94,7 @@
                     android:text="Consumed"/>
 
                 <TextView
-                    android:id="@+id/tvShowฺRemaining"
+                    android:id="@+id/tvShowRemaining"
                     android:layout_width="wrap_content"
                     android:layout_below="@id/tvBurned"
                     android:layout_alignParentRight="true"
@@ -112,7 +102,7 @@
                     android:textSize="20sp"
                     android:layout_marginTop="30dp"
                     android:textColor="#ffffff"
-                    android:text="ShowRemain"/>
+                    android:text="0"/>
 
                 <TextView
                     android:id="@+id/tvRemain"
@@ -126,14 +116,14 @@
                     android:text="Remaining"/>
 
                 <TextView
-                    android:id="@+id/tvShowฺWater"
+                    android:id="@+id/tvShowWater"
                     android:layout_width="wrap_content"
                     android:layout_below="@id/tvConsumed"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:textSize="20sp"
                     android:textColor="#ffffff"
-                    android:text="Show Water"/>
+                    android:text="0"/>
 
                 <TextView
                     android:id="@+id/tvWater"
@@ -146,7 +136,7 @@
                     android:text="Water"/>
 
                 <TextView
-                    android:id="@+id/tvShowฺExercise"
+                    android:id="@+id/tvShowExercise"
                     android:layout_width="wrap_content"
                     android:layout_below="@id/tvRemain"
                     android:layout_alignParentRight="true"
@@ -154,7 +144,7 @@
                     android:layout_marginTop="30dp"
                     android:textSize="20sp"
                     android:textColor="#ffffff"
-                    android:text="Show minutes Ex"/>
+                    android:text="0"/>
 
                 <TextView
                     android:id="@+id/tvExercise"
@@ -166,6 +156,18 @@
                     android:layout_below="@id/tvRemain"
                     android:layout_marginTop="60dp"
                     android:text="Exercise"/>
+
+                <TextView
+                    android:id="@+id/tvShowConsumed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="#ffffff"
+                    android:text="0"
+                    android:layout_alignBaseline="@+id/tvShowRemaining"
+                    android:layout_alignBottom="@+id/tvShowRemaining"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
 
             </RelativeLayout>
 

@@ -226,7 +226,7 @@ public class Database extends SQLiteOpenHelper {
 
         // Create food record
         String CREATE_FOOD_RECORD_TABLE = String.format("CREATE TABLE %s " +
-                        "(%s INTEGER PRIMARY KEY  AUTOINCREMENT, %s TEXT, %s DOUBLE, %s DOUBLE, %s DOUBLE, %s DOUBLE, %s INTEGER, %s DOUBLE, %s TIMESTAMP)",
+                        "(%s INTEGER PRIMARY KEY  AUTOINCREMENT, %s TEXT, %s DOUBLE, %s DOUBLE, %s DOUBLE, %s DOUBLE, %s INTEGER, %s DOUBLE, %s DATE DEFAULT CURRENT_DATE)",
                 FoodRecord.TABLE_NAME,
                 FoodRecord.Column.id,
                 FoodRecord.Column.itemName,
@@ -238,10 +238,29 @@ public class Database extends SQLiteOpenHelper {
                 FoodRecord.Column.totalCalories,
                 FoodRecord.Column.updatedDate);
         db.execSQL(CREATE_FOOD_RECORD_TABLE);
+       // set food
+        String itemName = "Pizza" ;
+        double calories = 250;
+        double totalFat = 0;
+        double carb = 0;
+        double protein = 0;
+        int serving = 2;
+        double totalCalories = 2*calories;
+        db.execSQL("INSERT INTO " + FoodRecord.TABLE_NAME
+                + " (" + FoodRecord.Column.itemName + ","
+                + FoodRecord.Column.calories + ","
+                + FoodRecord.Column.totalFat + ","
+                + FoodRecord.Column.carb + ","
+                + FoodRecord.Column.protein + ","
+                + FoodRecord.Column.serving + ","
+                + FoodRecord.Column.totalCalories + ") VALUES ('" + itemName
+                + "', '" + calories+ "', '" + totalFat
+                + "', '" + carb+ "', '" + protein
+                + "', '" + serving+ "', '" + totalCalories + "');");
 
         // Create activity record
         String CREATE_ACTIVITY_RECORD_TABLE = String.format("CREATE TABLE %s " +
-                        "(%s INTEGER PRIMARY KEY  AUTOINCREMENT, %s TEXT, %s DOUBLE, %s INTEGER, %s DOUBLE, %s TIMESTAMP)",
+                        "(%s INTEGER PRIMARY KEY  AUTOINCREMENT, %s TEXT, %s DOUBLE, %s INTEGER, %s DOUBLE, %s DATE DEFAULT CURRENT_DATE)",
                 ActivityRecord.TABLE_NAME,
                 ActivityRecord.Column.id,
                 ActivityRecord.Column.activityName,
