@@ -47,7 +47,7 @@ public class ActivityDataService  {
         List<String> activities = new ArrayList<String>();
         mDb = mHelper.getReadableDatabase();
         Cursor cursor = mDb.rawQuery("SELECT " + ActivityData.Column.activityName +
-                " FROM " + ActivityData.TABLE_NAME + " WHERE " + ActivityData.Column.activityName + " LIKE '" + searchItem + "%' " , null);
+                " FROM " + ActivityData.TABLE_NAME + " WHERE " + ActivityData.Column.activityName + " LIKE '%" + searchItem + "%' " , null);
         if (cursor != null) {
             cursor.moveToFirst();
         }

@@ -14,6 +14,6 @@ public class DewyService {
 
     public DewyService(Context ctx){
         this.ctx = ctx;
-        mDb = mHelper.getWritableDatabase();
+        mHelper = new Database(ctx);
     }
 }

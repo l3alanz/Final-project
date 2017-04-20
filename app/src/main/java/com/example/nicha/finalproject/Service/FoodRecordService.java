@@ -24,11 +24,32 @@ public class FoodRecordService {
         mHelper = new Database(ctx);
     }
     public String getConsume(){
-        //List<String> summary = new ArrayList<String>();
         String summary = new String();
         mDb = mHelper.getReadableDatabase();
         Cursor cursor = mDb.rawQuery("SELECT SUM( " + FoodRecord.Column.totalCalories + ") " +
                 " FROM " + FoodRecord.TABLE_NAME  + " WHERE " + FoodRecord.Column.updatedDate + " = date()", null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+
+        while ( !cursor.isAfterLast() ){
+            summary = cursor.getString(0);
+            cursor.moveToNext();
+        }
+        mDb.close();
+        mHelper.close();
+        if(summary == null){
+            summary = "0";
+        }
+        return summary;
+    }
+
+    public String getWater(){
+        String summary = new String();
+        mDb = mHelper.getReadableDatabase();
+        Cursor cursor = mDb.rawQuery("SELECT COUNT(*) "+
+                " FROM " + FoodRecord.TABLE_NAME  + " WHERE " + FoodRecord.Column.updatedDate + " = date()"
+                + " AND " + FoodRecord.Column.itemName + " LIKE '%water%' ", null);
         if (cursor != null) {
             cursor.moveToFirst();
         }

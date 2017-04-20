@@ -50,7 +50,7 @@ public class FoodDataService {
         List<String> foods = new ArrayList<String>();
         mDb = mHelper.getReadableDatabase();
         Cursor cursor = mDb.rawQuery("SELECT " + FoodData.Column.COL_ITEM_NAME +
-                " FROM " + FoodData.TABLE_NAME + " WHERE " + FoodData.Column.COL_ITEM_NAME + " LIKE '" + searchItem + "%' " , null);
+                " FROM " + FoodData.TABLE_NAME + " WHERE " + FoodData.Column.COL_ITEM_NAME + " LIKE '%" + searchItem + "%' " , null);
         if (cursor != null) {
             cursor.moveToFirst();
         }

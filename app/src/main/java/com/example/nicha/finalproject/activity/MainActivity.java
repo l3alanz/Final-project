@@ -3,6 +3,7 @@ package com.example.nicha.finalproject.activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -40,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
     TextView showWater;
     TextView showExercise;
     FoodRecordService voFoodRecord;
-    UserService voUserService;
-    ActivityRecordService voActivityRecordService;
+    UserService voUser;
+    ActivityRecordService voActivityRecord;
     String goal;
     String burned;
     String consumed;
@@ -56,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         voFoodRecord = new FoodRecordService(this);
-        //voUserService = new UserService(this);
-        voActivityRecordService = new ActivityRecordService(this);
+        voUser = new UserService(this);
+        voActivityRecord = new ActivityRecordService(this);
 
         Button btnGoSetting;
         Button btnGoSummary;
@@ -147,9 +148,29 @@ public class MainActivity extends AppCompatActivity {
         showRemaining = (TextView)findViewById(R.id.tvShowRemaining);
         showWater = (TextView)findViewById(R.id.tvShowWater);
         showExercise = (TextView)findViewById(R.id.tvShowExercise);
+        //
+        goal = voUser.getGoal();
         consumed = voFoodRecord.getConsume();
+        burned = voActivityRecord.getBurned();
+        remaining = getRemain(goal,consumed,burned);
+        water = voFoodRecord.getWater();
+        exercise = voActivityRecord.getMinute();
+        //
+        showGoal.setText(goal);
+        showBurned.setText(burned);
         showConsumed.setText(consumed);
+        showRemaining.setText(remaining);
+        showWater.setText(water);
+        showExercise.setText(exercise);
+    }
 
+    public String getRemain(String goal,String consumed, String burned){
+        int remain = Integer.parseInt(goal) - Integer.parseInt(consumed) + Integer.parseInt(burned);
+        if (remain < 0) {
+            showRemaining = (TextView) findViewById(R.id.tvShowRemaining);
+            showRemaining.setTextColor(Color.RED);
+        }
+        return String.valueOf(remain);
     }
 
     private void initInstances() {
