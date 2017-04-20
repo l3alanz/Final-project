@@ -295,20 +295,12 @@
             android:background="@drawable/hd_drawermenu"/>
 
         <Button
-            android:id="@+id/btnGoSetting"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Setting"
-            android:background="#ffffff"
-            android:textColor="#0288D1"/>
-
-        <Button
             android:id="@+id/btnGoSummary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Summary"
+            android:textSize="15dp"
             android:background="#ffffff"
             android:textColor="#0288D1"/>
 
@@ -317,6 +309,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textSize="15dp"
             android:text="Daily Journal"
             android:background="#ffffff"
             android:textColor="#0288D1"/>
@@ -326,6 +319,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textSize="15dp"
             android:text="Food and Exercise"
             android:background="#ffffff"
             android:textColor="#0288D1"/>
@@ -336,6 +330,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textSize="15dp"
             android:text="Recommendation program"
             android:background="#ffffff"
             android:textColor="#0288D1"/>
@@ -346,6 +341,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Tracking"
+            android:textSize="15dp"
             android:background="#ffffff"
             android:textColor="#0288D1"/>
 
@@ -355,6 +351,17 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Dewy"
+            android:textSize="15dp"
+            android:background="#ffffff"
+            android:textColor="#0288D1"/>
+
+        <Button
+            android:id="@+id/btnGoSetting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Setting"
+            android:textSize="15dp"
             android:background="#ffffff"
             android:textColor="#0288D1"/>
 

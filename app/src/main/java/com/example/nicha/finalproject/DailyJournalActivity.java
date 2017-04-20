@@ -22,7 +22,7 @@ public class DailyJournalActivity extends AppCompatActivity {
         ImageButton btnAddLunch;
         ImageButton btnAddDinner;
         ImageButton btnAddExercise;
-/*
+
         btnAddBreakfast = (ImageButton) findViewById(R.id.btnAddBreakfast);
         btnAddLunch = (ImageButton) findViewById(R.id.btnAddLunch);
         btnAddDinner = (ImageButton) findViewById(R.id.btnAddDinner);
@@ -71,6 +71,6 @@ public class DailyJournalActivity extends AppCompatActivity {
 
             }
         });
-*/
+
     }
 }
