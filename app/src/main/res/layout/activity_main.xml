@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
 
+
     <!--content-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,6 +20,8 @@
             android:background="?attr/colorPrimary"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
      </android.support.v7.widget.Toolbar>
+
+
 
         <RelativeLayout
             android:id="@+id/contentContainer"
@@ -204,11 +207,16 @@
                     android:layout_height="wrap_content"
                     android:text="MISSIONS "
                     android:textSize="20sp"
-                    android:layout_marginTop="26dp"
+                    android:layout_marginTop="16dp"
                     android:layout_centerHorizontal="true"
                     android:textColor="#ffffff"
                     android:textStyle="italic"
                     android:layout_below="@id/layout_summary"/>
+
+                <ScrollView
+                    android:layout_below="@id/tvMissions"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
                 <LinearLayout
                     android:layout_below="@id/tvMissions"
@@ -224,7 +232,8 @@
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:padding="16dp">
 
                         <TextView
                             android:id="@+id/tvMission1"
@@ -263,10 +272,13 @@
                             android:layout_below="@id/cbMission1"
                             />
 
+
                     </RelativeLayout>
 
 
                 </LinearLayout>
+
+                </ScrollView>
 
             </RelativeLayout>
 
@@ -274,6 +286,8 @@
 
 
         </RelativeLayout>
+
+
 
 
 
