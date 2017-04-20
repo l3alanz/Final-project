@@ -14,21 +14,17 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAni7AcHJRfYqHVaPRk-CZ56fQ4s8rYE9Q" />
+
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FoodExerciseActivity" >
-
-
-        </activity>
+        <activity android:name=".FoodExerciseActivity"></activity>
         <activity android:name=".TrackingActivity" />
-        <activity android:name=".FoodFactActivity" >
-
-        </activity>
-
+        <activity android:name=".FoodFactActivity"></activity>
         <activity android:name=".SettingActivity" />
         <!--
  ATTENTION: This was auto-generated to add Google Play services to your project for
@@ -42,6 +38,7 @@
         <activity android:name=".SearchFoodActivity" />
         <activity android:name=".SearchExerciseActivity" />
         <activity android:name=".RecommendationActivity" />
+        <activity android:name=".ExerciseFactActivity"></activity>
     </application>
 
 </manifest>
