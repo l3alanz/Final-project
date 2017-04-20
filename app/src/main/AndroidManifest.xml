@@ -20,13 +20,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SummaryActivity" />
         <activity android:name=".FoodExerciseActivity" >
 
 
         </activity>
         <activity android:name=".TrackingActivity" />
-        <activity android:name=".FoodFactActivity" />
+        <activity android:name=".FoodFactActivity" >
+
+        </activity>
+
         <activity android:name=".SettingActivity" />
         <!--
  ATTENTION: This was auto-generated to add Google Play services to your project for
@@ -36,8 +38,7 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".DailyJournalActivity" >
-        </activity>
+        <activity android:name=".DailyJournalActivity" />
         <activity android:name=".SearchFoodActivity" />
         <activity android:name=".SearchExerciseActivity" />
         <activity android:name=".RecommendationActivity" />

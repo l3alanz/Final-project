@@ -18,10 +18,8 @@ import com.example.nicha.finalproject.FoodExerciseActivity;
 import com.example.nicha.finalproject.R;
 import com.example.nicha.finalproject.RecommendationActivity;
 import com.example.nicha.finalproject.SettingActivity;
-import com.example.nicha.finalproject.SummaryActivity;
 import com.example.nicha.finalproject.TrackingActivity;
 import com.example.nicha.finalproject.Service.Database;
-import com.example.nicha.finalproject.fragment.MainFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -68,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent2 = new Intent(MainActivity.this,
-                        SummaryActivity.class);
+                        MainActivity.class);
                 startActivity(intent2);
 
             }
@@ -120,15 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
         initInstances();
 
-        if(savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.contentContainer, MainFragment.newInstance())
-                    .commit();
-        }
-
-
     }
-
     private void initInstances() {
         toolbar = (Toolbar) findViewById(R.id.toolbar) ;
         setSupportActionBar(toolbar);

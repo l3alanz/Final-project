@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:text="Gender"
             android:layout_marginLeft="26dp"
-            android:textSize="15dp"
+            android:textSize="20dp"
             android:layout_marginTop="15dp"/>
 
         <RadioGroup
@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:text="Age"
             android:layout_marginLeft="26dp"
-            android:textSize="15dp"
+            android:textSize="20dp"
             android:layout_marginTop="10dp"/>
 
         <EditText
@@ -101,7 +101,7 @@
             android:layout_height="wrap_content"
             android:text="Height"
             android:layout_marginLeft="26dp"
-            android:textSize="15dp"
+            android:textSize="20dp"
             android:layout_marginTop="10dp"/>
 
         <EditText
@@ -109,7 +109,7 @@
             android:inputType="number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            android:textSize="20dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"
             android:maxLines="1"
@@ -128,7 +128,7 @@
             android:layout_height="wrap_content"
             android:text="Weight"
             android:layout_marginLeft="26dp"
-            android:textSize="15dp"
+            android:textSize="20dp"
             android:layout_marginTop="10dp"/>
 
         <EditText
@@ -136,7 +136,7 @@
             android:inputType="number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            android:textSize="20dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"
             android:maxLines="1"
@@ -155,7 +155,7 @@
             android:layout_height="wrap_content"
             android:text="Goal"
             android:layout_marginLeft="26dp"
-            android:textSize="15dp"
+            android:textSize="20dp"
             android:layout_marginTop="10dp"/>
 
         <EditText
@@ -163,7 +163,7 @@
             android:inputType="number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            android:textSize="20dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"
             android:maxLines="1"
@@ -182,7 +182,7 @@
             android:layout_height="wrap_content"
             android:text="Exercise behavior"
             android:layout_marginLeft="26dp"
-            android:textSize="15dp"
+            android:textSize="20dp"
             android:layout_marginTop="10dp"/>
 
         <Spinner
@@ -190,9 +190,25 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:drawSelectorOnTop="true"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginTop="15dp"/>
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_below="@id/spExercise"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="#F5F9FD"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/colorAccent"
+            android:text="NEXT"
+            />
 
     </RelativeLayout>
+
+
     
 
 
