@@ -23,8 +23,9 @@ public class FoodRecordService {
         this.ctx = ctx;
         mHelper = new Database(ctx);
     }
-    public List<String> getConsume(){
-        List<String> summary = new ArrayList<String>();
+    public String getConsume(){
+        //List<String> summary = new ArrayList<String>();
+        String summary = new String();
         mDb = mHelper.getReadableDatabase();
         Cursor cursor = mDb.rawQuery("SELECT SUM( " + FoodRecord.Column.totalCalories + ") " +
                 " FROM " + FoodRecord.TABLE_NAME  + " WHERE " + FoodRecord.Column.updatedDate + " = date()", null);
@@ -33,7 +34,7 @@ public class FoodRecordService {
         }
 
         while ( !cursor.isAfterLast() ){
-            summary.add(cursor.getString(0));
+            summary = cursor.getString(0);
             cursor.moveToNext();
         }
         mDb.close();

@@ -12,14 +12,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.nicha.finalproject.DailyJournalActivity;
 import com.example.nicha.finalproject.FoodExerciseActivity;
 import com.example.nicha.finalproject.R;
 import com.example.nicha.finalproject.RecommendationActivity;
+import com.example.nicha.finalproject.Service.ActivityRecordService;
+import com.example.nicha.finalproject.Service.FoodRecordService;
+import com.example.nicha.finalproject.Service.UserService;
 import com.example.nicha.finalproject.SettingActivity;
 import com.example.nicha.finalproject.TrackingActivity;
 import com.example.nicha.finalproject.Service.Database;
+
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -27,14 +33,31 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle; // Hamburger button
     Toolbar toolbar;
-    SQLiteDatabase mDb;
-    Database mHelper;
+    TextView showGoal;
+    TextView showBurned;
+    TextView showConsumed;
+    TextView showRemaining;
+    TextView showWater;
+    TextView showExercise;
+    FoodRecordService voFoodRecord;
+    UserService voUserService;
+    ActivityRecordService voActivityRecordService;
+    String goal;
+    String burned;
+    String consumed;
+    String remaining;
+    String water;
+    String exercise;
+    List<String> summamry;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        voFoodRecord = new FoodRecordService(this);
+        //voUserService = new UserService(this);
+        voActivityRecordService = new ActivityRecordService(this);
 
         Button btnGoSetting;
         Button btnGoSummary;
@@ -117,8 +140,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
         initInstances();
+        // main
+        showGoal = (TextView)findViewById(R.id.tvShowGoal);
+        showBurned = (TextView)findViewById(R.id.tvShowBurned);
+        showConsumed = (TextView)findViewById(R.id.tvShowConsumed);
+        showRemaining = (TextView)findViewById(R.id.tvShowRemaining);
+        showWater = (TextView)findViewById(R.id.tvShowWater);
+        showExercise = (TextView)findViewById(R.id.tvShowExercise);
+        consumed = voFoodRecord.getConsume();
+        showConsumed.setText(consumed);
 
     }
+
     private void initInstances() {
         toolbar = (Toolbar) findViewById(R.id.toolbar) ;
         setSupportActionBar(toolbar);

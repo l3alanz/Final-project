@@ -14,6 +14,6 @@ public class UserService {
 
     public UserService(Context ctx){
         this.ctx = ctx;
-        mDb = mHelper.getWritableDatabase();
+        mDb = mHelper.getReadableDatabase();
     }
 }
