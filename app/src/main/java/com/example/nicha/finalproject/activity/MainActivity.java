@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
         showRemaining.setText(remaining);
         showWater.setText(water);
         showExercise.setText(exercise);
-        ฟฟหก;
+
     }
 
     public String getRemain(String goal,String consumed, String burned){
