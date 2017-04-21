@@ -66,7 +66,7 @@ public class SearchExerciseActivity extends AppCompatActivity {
                 return true;
             }
         });
-        //selectData();
+        selectData();
     }
 
     public void firstSearch(){
@@ -84,11 +84,11 @@ public class SearchExerciseActivity extends AppCompatActivity {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                     Object item = parent.getItemAtPosition(position);
                     String label = item.toString();
-                    //searchExercise.setQuery(label,false);
-                    /*Intent intent = new Intent(getBaseContext(), SignoutActivity.class);
+                    searchExercise.setQuery(label,false);
+                    Intent intent = new Intent(getBaseContext(), ExerciseFactActivity.class);
                     intent.putExtra("exerciseName", label);
                     startActivity(intent);
-                    */
+
                 }
             }
         );

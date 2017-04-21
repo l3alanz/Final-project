@@ -156,6 +156,7 @@
         android:layout_marginRight="16dp">
 
         <RelativeLayout
+            android:id="@+id/rltBreakfast"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -188,6 +189,7 @@
                 android:text="showing food which is selected"
                 android:textColor="#FFF59D"
                 android:textSize="15dp"/>
+
 
 
 
@@ -294,7 +296,8 @@
                 android:layout_marginLeft="15dp"
                 android:text="showing exercise which is selected"
                 android:textColor="#FFF59D"
-                android:textSize="15dp"/>
+                android:textSize="15dp"
+                android:id="@+id/tvShowExercise" />
 
         </RelativeLayout>
 

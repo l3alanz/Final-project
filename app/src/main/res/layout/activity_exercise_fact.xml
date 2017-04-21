@@ -28,6 +28,21 @@
             android:textSize="30dp"/>
     </RelativeLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp">
+        <Button
+            android:id="@+id/btnAddExercise"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Add Exercise"/>
+
+    </LinearLayout>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -50,7 +65,8 @@
             android:layout_marginTop="15dp"
             android:maxLength="3"
             android:layout_height="wrap_content"
-            android:hint="min"/>
+            android:hint="min"
+            android:id="@+id/evMin" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -60,7 +76,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Calories burned"
+            android:text="Calories burned per hour"
             android:layout_marginLeft="26dp"
             android:layout_marginTop="20dp"
             android:textSize="20dp" />
@@ -74,7 +90,8 @@
             android:textSize="20dp"
             android:textColor="#FF4081"
             android:layout_height="wrap_content"
-            android:text="Cal burned"/>
+            android:text="Cal burned"
+            android:id="@+id/tvCal" />
     </RelativeLayout>
 
 </LinearLayout>
