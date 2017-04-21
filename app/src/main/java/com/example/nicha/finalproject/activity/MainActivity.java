@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.nicha.finalproject.DailyJournalActivity;
+import com.example.nicha.finalproject.DewyActivity;
 import com.example.nicha.finalproject.FoodExerciseActivity;
 import com.example.nicha.finalproject.R;
 import com.example.nicha.finalproject.RecommendationActivity;
@@ -66,12 +67,14 @@ public class MainActivity extends AppCompatActivity {
         Button btnGoFoodEx;
         Button btnGoTracking;
         Button btnGoRecommendation;
+        Button btnGoDewy;
         btnGoSetting = (Button) findViewById(R.id.btnGoSetting);
         btnGoSummary = (Button) findViewById(R.id.btnGoSummary);
         btnGoDaily = (Button) findViewById(R.id.btnGoDaily);
         btnGoFoodEx = (Button) findViewById(R.id.btnGoFoodEx);
         btnGoTracking = (Button) findViewById(R.id.btnGoTracking);
         btnGoRecommendation = (Button) findViewById(R.id.btnGoRecommendation);
+        btnGoDewy = (Button) findViewById(R.id.btnGoDewy);
 
 
         btnGoSetting.setOnClickListener(new View.OnClickListener() {
@@ -136,6 +139,17 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent5 = new Intent(MainActivity.this,
                         TrackingActivity.class);
                 startActivity(intent5);
+
+            }
+        });
+
+        btnGoDewy.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent6 = new Intent(MainActivity.this,
+                        DewyActivity.class);
+                startActivity(intent6);
 
             }
         });

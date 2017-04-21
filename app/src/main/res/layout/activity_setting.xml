@@ -90,6 +90,7 @@
             android:textSize="15dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"
+            android:layout_marginTop="2dp"
             android:maxLines="1"
             android:maxLength="3"
             android:textColor="#757575"
@@ -114,7 +115,7 @@
             android:inputType="number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="15dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"
             android:maxLines="1"
@@ -134,14 +135,14 @@
             android:text="Weight"
             android:layout_marginLeft="26dp"
             android:textSize="20dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="12dp"/>
 
         <EditText
             android:id="@+id/etWeight"
             android:inputType="number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="15dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"
             android:maxLines="1"
@@ -161,14 +162,13 @@
             android:text="Goal"
             android:layout_marginLeft="26dp"
             android:textSize="20dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="15dp"/>
 
         <Spinner
             android:id="@+id/etGoal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="15dp"
             android:textColor="#757575"
             android:hint="kg."/>
     </RelativeLayout>
@@ -179,19 +179,21 @@
         android:layout_weight="1">
 
         <TextView
+            android:id="@+id/tvBehavior"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Exercise behavior"
+            android:text="Behavior"
             android:layout_marginLeft="26dp"
             android:textSize="20dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="15dp"/>
 
         <Spinner
             android:id="@+id/spExercise"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawSelectorOnTop="true"
-            android:layout_marginTop="15dp"/>
+            android:layout_alignParentRight="true"
+            />
 
         <Button
             android:id="@+id/btnNext"
