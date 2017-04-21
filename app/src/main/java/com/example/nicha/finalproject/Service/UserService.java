@@ -34,8 +34,8 @@ public class UserService {
             summary.setId(cursor.getInt(0));
             summary.setFirstName(cursor.getString(1));
             summary.setLastName(cursor.getString(2));
-            summary.setAge(cursor.getInt(3));
-            summary.setGender(cursor.getString(4));
+            summary.setGender(cursor.getString(3));
+            summary.setAge(cursor.getInt(4));
             summary.setWeight(cursor.getDouble(5));
             summary.setHeight(cursor.getDouble(6));
             summary.setActivityType(cursor.getString(7));
@@ -47,6 +47,7 @@ public class UserService {
         }
         mDb.close();
         mHelper.close();
+
         return summary;
     }
 
@@ -65,6 +66,10 @@ public class UserService {
         }
         mDb.close();
         mHelper.close();
+        if(summary != null){
+        Double sum = Math.floor(Double.parseDouble(summary));
+        summary = String.valueOf(sum.intValue());
+        }
         return summary;
     }
 
@@ -87,7 +92,7 @@ public class UserService {
         }
 
         double TDEE = 0 ;
-        if(activityType.equals("female")){
+        if(activityType.equals("A")){
             TDEE = BMR*1.2;
         } else if(activityType.equals("B")){
             TDEE = BMR*1.375;

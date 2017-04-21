@@ -102,13 +102,13 @@ public class SettingActivity extends AppCompatActivity {
         eTarget.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(position == 1){
+                if(position == 0){
                     target = "A";
                 }
-                else if(position == 2){
+                else if(position == 1){
                     target = "B";
                 }
-                else if(position == 3){
+                else if(position == 2){
                     target = "C";
                 }
             }
@@ -122,19 +122,19 @@ public class SettingActivity extends AppCompatActivity {
         eType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(position == 1){
+                if(position == 0){
                     type = "A";
                 }
-                else if(position == 2){
+                else if(position == 1){
                     type = "B";
                 }
-                else if(position == 3){
+                else if(position == 2){
                     type = "C";
                 }
-                else if(position == 4){
+                else if(position == 3){
                     type = "D";
                 }
-                else if(position == 5){
+                else if(position == 4){
                     type = "E";
                 }
             }
@@ -168,7 +168,6 @@ public class SettingActivity extends AppCompatActivity {
                     gender = "female";
                 }
                 userInfo.setGender(gender);
-                Log.i("Data2", String.valueOf(userInfo.getAge()));
                 voUser.updateData(userInfo);
                 Intent intent1 = new Intent(SettingActivity.this,
                         MainActivity.class);

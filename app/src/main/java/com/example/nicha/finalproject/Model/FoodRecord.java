@@ -15,6 +15,8 @@ public class FoodRecord {
     private static final String DB_NAME = "HealthMe";
     private static final int DB_VERSION = 1;
     public static final String TABLE_NAME = "foodRecord";
+
+
     public class Column{
         public static final String id = BaseColumns._ID;
         public static final String itemName = "itemName";
@@ -24,6 +26,7 @@ public class FoodRecord {
         public static final String protein = "protein";
         public static final String serving = "serving";
         public static final String totalCalories = "totalCalories";
+        public static final String meal = "meal";
         public static final String updatedDate = "updatedDate";
     }
 
@@ -35,13 +38,14 @@ public class FoodRecord {
     private double protein;
     private int serving;
     private double totalCalories;
+    private String meal;
     private Timestamp updatedDate;
 
     public FoodRecord(){
 
     }
 
-    public FoodRecord(int id, String itemName, double calories, double totalFat, double carb, double protein, int serving, double totalCalories, Timestamp updatedDate){
+    public FoodRecord(int id, String itemName, double calories, double totalFat, double carb, double protein, int serving, double totalCalories, String meal, Timestamp updatedDate){
         this.id = id;
         this.itemName = itemName;
         this.calories = calories;
@@ -50,6 +54,7 @@ public class FoodRecord {
         this.protein = protein;
         this.serving = serving;
         this.totalCalories = totalCalories;
+        this.meal = meal;
         this.updatedDate = updatedDate;
     }
 
@@ -115,6 +120,14 @@ public class FoodRecord {
 
     public void setTotalCalories(double totalCalories) {
         this.totalCalories = totalCalories;
+    }
+
+    public String getMeal() {
+        return meal;
+    }
+
+    public void setMeal(String meal) {
+        this.meal = meal;
     }
 
     public Timestamp getUpdatedDate() {

@@ -50,12 +50,14 @@ public class MainActivity extends AppCompatActivity {
     String water;
     String exercise;
     List<String> summamry;
+    Database mHelper;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mHelper = new Database(this);
         voFoodRecord = new FoodRecordService(this);
         voUser = new UserService(this);
         voActivityRecord = new ActivityRecordService(this);
@@ -149,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
         showWater = (TextView)findViewById(R.id.tvShowWater);
         showExercise = (TextView)findViewById(R.id.tvShowExercise);
         //
+
         goal = voUser.getGoal();
         consumed = voFoodRecord.getConsume();
         burned = voActivityRecord.getBurned();
@@ -166,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public String getRemain(String goal,String consumed, String burned){
-        Double remain = Double.parseDouble(goal) - Double.parseDouble(consumed) + Double.parseDouble(burned);
+        int remain = Integer.parseInt(goal) - Integer.parseInt(consumed) + Integer.parseInt(burned);
         if (remain < 0) {
             showRemaining = (TextView) findViewById(R.id.tvShowRemaining);
             showRemaining.setTextColor(Color.RED);

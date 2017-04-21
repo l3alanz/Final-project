@@ -1,17 +1,26 @@
 package com.example.nicha.finalproject;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.nicha.finalproject.Service.FoodDataService;
+import com.example.nicha.finalproject.Service.FoodRecordService;
+import com.example.nicha.finalproject.activity.MainActivity;
 
 import java.util.List;
 
 public class FoodFactActivity extends AppCompatActivity {
 
     FoodDataService poFoodDataService;
+    FoodRecordService poFoodRecordService;
     List<String> food;
     TextView tvFoodName;
     TextView tvCalories;
@@ -35,18 +44,23 @@ public class FoodFactActivity extends AppCompatActivity {
     TextView tvVitaminB6;
     TextView tvVitaminB12;
     TextView tvMagnesium;
+    Button bAdd;
+    EditText eServing;
+    String[] str;
+    String foodReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_fact);
-        String foodReceiver = getIntent().getStringExtra("foodName");
+        foodReceiver = getIntent().getStringExtra("foodName");
         tvFoodName = (TextView)findViewById(R.id.tvFoodName);
         tvFoodName.setText(foodReceiver);
         poFoodDataService = new FoodDataService(this);
+        poFoodRecordService = new FoodRecordService(this);
         food = poFoodDataService.getFood(foodReceiver);
         String readLine = String.valueOf(food);
-        String[] str = readLine.split("//,");
+        str = readLine.split("//,");
         tvCalories = (TextView)findViewById(R.id.tvCalories);
         tvTotalFat = (TextView)findViewById(R.id.tvTotalFat);
         tvSaturatedFat = (TextView)findViewById(R.id.tvSaturatedFat);
@@ -68,6 +82,8 @@ public class FoodFactActivity extends AppCompatActivity {
         tvVitaminB6 = (TextView)findViewById(R.id.tvVitaminB6);
         tvVitaminB12 = (TextView)findViewById(R.id.tvVitaminB12);
         tvMagnesium = (TextView)findViewById(R.id.tvMagnesium);
+        bAdd = (Button)findViewById(R.id.btnAddToLunch);
+        eServing = (EditText) findViewById(R.id.etFoodAmount);
 
         tvCalories.setText(str[3]+" Kcal");
         tvTotalFat.setText(str[5]+ " g.");
@@ -93,5 +109,54 @@ public class FoodFactActivity extends AppCompatActivity {
         tvMagnesium.setText(str[32]);
 
 
+
+        bAdd.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                // set meal seletion
+                AlertDialog.Builder b = new AlertDialog.Builder(FoodFactActivity.this);
+                b.setTitle("Select Meal");
+                String[] types = {"Breakfast", "Lunch", "Dinner"};
+                b.setItems(types, new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        dialog.dismiss();
+                        switch(which){
+                            case 0:
+                                poFoodRecordService.addFood(foodReceiver,Double.parseDouble(str[3]),Double.parseDouble(str[5]),Double.parseDouble(str[18]),Double.parseDouble(str[23])
+                                        ,Integer.parseInt(eServing.getText().toString()),"Breakfsat");
+                                next();
+                                break;
+
+                            case 1:
+                                poFoodRecordService.addFood(foodReceiver,Double.parseDouble(str[3]),Double.parseDouble(str[5]),Double.parseDouble(str[18]),Double.parseDouble(str[23])
+                                        ,Integer.parseInt(eServing.getText().toString()),"Lunch");
+                                next();
+                                break;
+
+                            case 2:
+                                poFoodRecordService.addFood(foodReceiver,Double.parseDouble(str[3]),Double.parseDouble(str[5]),Double.parseDouble(str[18]),Double.parseDouble(str[23])
+                                        ,Integer.parseInt(eServing.getText().toString()),"Dinner");
+                                next();
+                                break;
+                        }
+                    }
+
+                });
+                b.show();
+            }
+        });
+
+
     }
+
+    public void next(){
+        Intent intent1 = new Intent(FoodFactActivity.this,
+                MainActivity.class);
+        startActivity(intent1);
+    }
+
 }
