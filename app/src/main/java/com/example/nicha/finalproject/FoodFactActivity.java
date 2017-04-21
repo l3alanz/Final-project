@@ -127,7 +127,7 @@ public class FoodFactActivity extends AppCompatActivity {
                         switch(which){
                             case 0:
                                 poFoodRecordService.addFood(foodReceiver,Double.parseDouble(str[3]),Double.parseDouble(str[5]),Double.parseDouble(str[18]),Double.parseDouble(str[23])
-                                        ,Integer.parseInt(eServing.getText().toString()),"Breakfsat");
+                                        ,Integer.parseInt(eServing.getText().toString()),"Breakfast");
                                 next();
                                 break;
 

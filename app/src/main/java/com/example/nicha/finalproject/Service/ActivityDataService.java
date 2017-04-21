@@ -61,4 +61,22 @@ public class ActivityDataService  {
         mHelper.close();
         return activities;
     }
+
+    public String getCalories(String searchItem){
+        String summary = new String();
+        mDb = mHelper.getReadableDatabase();
+        Cursor cursor = mDb.rawQuery("SELECT " + ActivityData.Column.caloriesPerHour +
+                " FROM " + ActivityData.TABLE_NAME  + " WHERE " + ActivityData.Column.activityName + " = '"+ searchItem + "';", null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+
+        while ( !cursor.isAfterLast() ){
+            summary = cursor.getString(0);
+            cursor.moveToNext();
+        }
+        mDb.close();
+        mHelper.close();
+        return summary;
+    }
 }

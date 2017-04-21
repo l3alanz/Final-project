@@ -201,7 +201,7 @@ public class Database extends SQLiteOpenHelper {
         String gender = "male";
         double weight = 78.8;
         double height = 173;
-        String activityType = "C";
+        String activityType = "1";
         String target = "B";
         double BMR = 150;
         double TDEE = 160;
@@ -219,15 +219,15 @@ public class Database extends SQLiteOpenHelper {
                 + User.Column.BMR + ","
                 + User.Column.TDEE + ","
                 + User.Column.goal + ") VALUES ('" + firstName
-                + "', '" + lastName + "', '" + age
-                + "', '" + gender+ "', '" + weight
+                + "', '" + lastName + "', '" + gender
+                + "', '" + age+ "', '" + weight
                 + "', '" + height+ "', '" + activityType
                 + "', '" + target+ "', '" + BMR
                 + "', '" + TDEE+ "', '" + goal + "');");
 
         // Create food record
         String CREATE_FOOD_RECORD_TABLE = String.format("CREATE TABLE %s " +
-                        "(%s INTEGER PRIMARY KEY  AUTOINCREMENT, %s TEXT, %s DOUBLE, %s DOUBLE, %s DOUBLE, %s DOUBLE, %s INTEGER, %s DOUBLE, %s TEXT, %s DATE DEFAULT CURRENT_DATE)",
+                        "(%s INTEGER PRIMARY KEY  AUTOINCREMENT, %s TEXT, %s DOUBLE, %s DOUBLE, %s DOUBLE, %s DOUBLE, %s INTEGER, %s DOUBLE, %s TEXT, %s DATE DEFAULT (DATE(CURRENT_TIMESTAMP,'localtime')))",
                 FoodRecord.TABLE_NAME,
                 FoodRecord.Column.id,
                 FoodRecord.Column.itemName,
@@ -244,7 +244,7 @@ public class Database extends SQLiteOpenHelper {
 
         // Create activity record
         String CREATE_ACTIVITY_RECORD_TABLE = String.format("CREATE TABLE %s " +
-                        "(%s INTEGER PRIMARY KEY  AUTOINCREMENT, %s TEXT, %s DOUBLE, %s INTEGER, %s DOUBLE, %s DATE DEFAULT CURRENT_DATE)",
+                        "(%s INTEGER PRIMARY KEY  AUTOINCREMENT, %s TEXT, %s DOUBLE, %s INTEGER, %s DOUBLE, %s DATE DEFAULT (DATE(CURRENT_TIMESTAMP,'localtime')))",
                 ActivityRecord.TABLE_NAME,
                 ActivityRecord.Column.id,
                 ActivityRecord.Column.activityName,
