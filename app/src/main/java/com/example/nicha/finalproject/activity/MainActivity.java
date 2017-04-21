@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public String getRemain(String goal,String consumed, String burned){
-        int remain = Integer.parseInt(goal) - Integer.parseInt(consumed) + Integer.parseInt(burned);
+        Double remain = Double.parseDouble(goal) - Double.parseDouble(consumed) + Double.parseDouble(burned);
         if (remain < 0) {
             showRemaining = (TextView) findViewById(R.id.tvShowRemaining);
             showRemaining.setTextColor(Color.RED);

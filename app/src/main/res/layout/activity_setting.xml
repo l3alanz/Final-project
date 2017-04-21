@@ -40,12 +40,15 @@
             android:layout_marginTop="15dp"/>
 
         <RadioGroup
+            android:id="@+id/radio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:orientation="horizontal"
             android:layout_marginRight="15dp"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="8dp"
+            android:checkedButton="@+id/rbtnFemale">
+
             <RadioButton
                 android:id="@+id/rbtnMale"
                 android:layout_width="wrap_content"
@@ -54,13 +57,15 @@
                 android:checked="true"
                 android:textColor="#757575"
                 android:textSize="15dp"/>
+
             <RadioButton
                 android:id="@+id/rbtnFemale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Female"
                 android:textColor="#757575"
-                android:textSize="15dp"/>
+                android:textSize="15dp"
+                 />
         </RadioGroup>
     </RelativeLayout>
 
@@ -113,7 +118,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"
             android:maxLines="1"
-            android:maxLength="3"
+            android:maxLength="5"
             android:textColor="#757575"
             android:hint="cm."/>
     </RelativeLayout>
@@ -140,7 +145,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"
             android:maxLines="1"
-            android:maxLength="3"
+            android:maxLength="4"
             android:textColor="#757575"
             android:hint="kg."/>
     </RelativeLayout>

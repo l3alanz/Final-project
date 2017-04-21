@@ -11,6 +11,8 @@ public class User {
     private static final String DB_NAME = "HealthMe";
     private static final int DB_VERSION = 1;
     public static final String TABLE_NAME = "user";
+
+
     public class Column{
         public static final String id = BaseColumns._ID;
         public static final String firstName = "firstName";
@@ -148,5 +150,13 @@ public class User {
 
     public void setGoal(double goal) {
         this.goal = goal;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }
