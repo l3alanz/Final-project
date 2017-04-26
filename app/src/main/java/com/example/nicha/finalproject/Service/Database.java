@@ -11,6 +11,7 @@ import com.example.nicha.finalproject.Model.ActivityRecord;
 import com.example.nicha.finalproject.Model.Dewy;
 import com.example.nicha.finalproject.Model.FoodData;
 import com.example.nicha.finalproject.Model.FoodRecord;
+import com.example.nicha.finalproject.Model.Tracking;
 import com.example.nicha.finalproject.Model.User;
 
 import java.io.BufferedReader;
@@ -264,6 +265,28 @@ public class Database extends SQLiteOpenHelper {
                 Dewy.Column.dewyFood,
                 Dewy.Column.dewyState);
         db.execSQL(CREATE_DEWY_TABLE);
+
+        //Create Tracking
+        String CREATE_TRACKING_TABLE = String.format("CREATE TABLE %s " +
+        "(%s INTEGER PRIMARY KEY  AUTOINCREMENT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s DATE DEFAULT (DATE(CURRENT_TIMESTAMP,'localtime')))",
+                Tracking.TABLE_NAME,
+                Tracking.Column.id,
+                Tracking.Column.stillTime,
+                Tracking.Column.walkingTime,
+                Tracking.Column.runningTime,
+                Tracking.Column.bikingTime,
+                Tracking.Column.drivingTime,
+                Tracking.Column.updatedDate);
+        db.execSQL(CREATE_TRACKING_TABLE);
+
+        db.execSQL("INSERT INTO " + Tracking.TABLE_NAME
+                + " (" + Tracking.Column.stillTime + ","
+                + Tracking.Column.walkingTime + ","
+                + Tracking.Column.runningTime + ","
+                + Tracking.Column.bikingTime + ","
+                + Tracking.Column.drivingTime  + ") VALUES ('" + 0
+                + "', " + 0+ ", " + 0 + "," + 0
+                + ", " + 0+ ");");
     }
 
     @Override
@@ -274,6 +297,7 @@ public class Database extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + ActivityRecord.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + User.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + Dewy.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + Tracking.TABLE_NAME);
         onCreate(db);
     }
     public List<String> getActivityDataList(){

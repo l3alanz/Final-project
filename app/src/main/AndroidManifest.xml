@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nicha.finalproject">
 
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
     <application
         android:name=".MainApplication"
         android:allowBackup="true"
@@ -40,6 +45,7 @@
         <activity android:name=".RecommendationActivity" />
         <activity android:name=".ExerciseFactActivity" />
         <activity android:name=".DewyActivity"></activity>
+        <service android:name=".Service.TrackingProcess" android:process=":tracking_service" />
     </application>
 
 </manifest>

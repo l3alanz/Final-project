@@ -31,7 +31,7 @@ public class ActivityRecord {
     private double totalCalories;
     private Timestamp updatedDate;
 
-    public ActivityRecord(int id, String activityName, double caloriesPerHour, int min, double totalCalories, Timestamp updatedDate){
+    public ActivityRecord(int id, String activityName, double caloriesPerHour, int minute, double totalCalories, Timestamp updatedDate){
         this.id = id;
         this.activityName = activityName;
         this.caloriesPerHour = caloriesPerHour;

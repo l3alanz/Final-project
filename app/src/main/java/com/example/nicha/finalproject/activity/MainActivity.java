@@ -1,5 +1,7 @@
 package com.example.nicha.finalproject.activity;
 
+import android.app.ActivityManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.database.sqlite.SQLiteDatabase;
@@ -18,10 +20,13 @@ import android.widget.TextView;
 import com.example.nicha.finalproject.DailyJournalActivity;
 import com.example.nicha.finalproject.DewyActivity;
 import com.example.nicha.finalproject.FoodExerciseActivity;
+import com.example.nicha.finalproject.Model.Tracking;
 import com.example.nicha.finalproject.R;
 import com.example.nicha.finalproject.RecommendationActivity;
 import com.example.nicha.finalproject.Service.ActivityRecordService;
 import com.example.nicha.finalproject.Service.FoodRecordService;
+import com.example.nicha.finalproject.Service.TrackingProcess;
+import com.example.nicha.finalproject.Service.TrackingService;
 import com.example.nicha.finalproject.Service.UserService;
 import com.example.nicha.finalproject.SettingActivity;
 import com.example.nicha.finalproject.TrackingActivity;
@@ -44,12 +49,14 @@ public class MainActivity extends AppCompatActivity {
     FoodRecordService voFoodRecord;
     UserService voUser;
     ActivityRecordService voActivityRecord;
+    TrackingService voTracking;
     String goal;
     String burned;
     String consumed;
     String remaining;
     String water;
     String exercise;
+    int calTrack;
     List<String> summamry;
     Database mHelper;
 
@@ -62,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
         voFoodRecord = new FoodRecordService(this);
         voUser = new UserService(this);
         voActivityRecord = new ActivityRecordService(this);
+        voTracking = new TrackingService(this);
+        voTracking.checkData();
 
         Button btnGoSetting;
         Button btnGoSummary;
@@ -138,6 +147,11 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+/*
+                if(isMyServiceRunning(TrackingProcess.class)) {
+                    stopService(new Intent(MainActivity.this, TrackingProcess.class));
+                }
+*/
                 Intent intent5 = new Intent(MainActivity.this,
                         TrackingActivity.class);
                 startActivity(intent5);
@@ -165,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
         showWater = (TextView)findViewById(R.id.tvShowWater);
         showExercise = (TextView)findViewById(R.id.tvShowExercise);
         //
-
+        calFromTrack();
         goal = voUser.getGoal();
         consumed = voFoodRecord.getConsume();
         burned = voActivityRecord.getBurned();
@@ -179,11 +193,22 @@ public class MainActivity extends AppCompatActivity {
         showRemaining.setText(remaining);
         showWater.setText(water);
         showExercise.setText(exercise);
+/*
+        if(!isMyServiceRunning(TrackingProcess.class)) {
+            stopService(new Intent(MainActivity.this, TrackingProcess.class));
+        }*/
 
     }
 
+    public void calFromTrack(){
+        Tracking track = new Tracking();
+        track = voTracking.getTrack();
+        calTrack = (Integer.parseInt(track.getWalkingTime())/60000)*2 + (Integer.parseInt(track.getRunningTime())/60000)*8 + (Integer.parseInt(track.getBikingTime())/60000)*6;
+        calTrack = (calTrack/1000)/60;
+    }
+
     public String getRemain(String goal,String consumed, String burned){
-        int remain = Integer.parseInt(goal) - Integer.parseInt(consumed) + Integer.parseInt(burned);
+        int remain = Integer.parseInt(goal) - Integer.parseInt(consumed) + Integer.parseInt(burned) + calTrack;
         if (remain < 0) {
             showRemaining = (TextView) findViewById(R.id.tvShowRemaining);
             showRemaining.setTextColor(Color.RED);
@@ -206,6 +231,16 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    private boolean isMyServiceRunning(Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
