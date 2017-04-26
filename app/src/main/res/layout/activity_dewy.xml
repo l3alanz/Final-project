@@ -30,8 +30,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-       >
+        android:layout_height="match_parent">
 
         <ImageButton
             android:id="@+id/btnFeed"
@@ -43,24 +42,32 @@
             android:layout_centerInParent="true"
             android:layout_marginRight="26dp" />
 
-        <ImageButton
-            android:id="@+id/btnDrink"
+        <TextView
+            android:id="@+id/tvLevel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_drink"
-            android:layout_alignParentRight="true"
-            android:clickable="true"
-            android:layout_marginTop="16dp"
-            android:layout_below="@id/btnFeed"
-            android:layout_marginRight="26dp" />
+            android:text="Lv."
+            android:layout_above="@+id/monster"
+            android:layout_centerHorizontal="true"
+            android:textSize="18dp"
+            android:textColor="#d32f2f"/>
+
 
         <ImageView
             android:id="@+id/monster"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/mons"
-            android:layout_alignBottom="@+id/btnDrink"
+            android:layout_centerInParent="true"
             android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:id="@+id/ivHeart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/monster"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_heart"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -81,7 +88,6 @@
             android:layout_marginRight="100dp"
             android:layout_marginTop="30dp"
             android:progressTint="#e67630"
-            android:progress="50"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_below="@id/monster"
             android:layout_centerHorizontal="true"/>
