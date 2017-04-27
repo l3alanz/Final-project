@@ -79,7 +79,7 @@ public class DewyActivity extends AppCompatActivity {
                             j ++;
                         }
 
-
+                    // for updating level of Dewy
 
                         tvLevel.setText("Lv "+j);
                         break;
