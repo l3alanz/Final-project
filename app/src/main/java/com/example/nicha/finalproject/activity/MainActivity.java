@@ -163,11 +163,11 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-/*
+
                 if(isMyServiceRunning(TrackingProcess.class)) {
                     stopService(new Intent(MainActivity.this, TrackingProcess.class));
                 }
-*/
+
                 Intent intent5 = new Intent(MainActivity.this,
                         TrackingActivity.class);
                 startActivity(intent5);
@@ -187,6 +187,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         initInstances();
+        int trackNum = voTracking.checkData();
+        if(trackNum == 0){
+            voTracking.createData();
+        }
+
         // main
         showGoal = (TextView)findViewById(R.id.tvShowGoal);
         showBurned = (TextView)findViewById(R.id.tvShowBurned);
@@ -195,10 +200,11 @@ public class MainActivity extends AppCompatActivity {
         showWater = (TextView)findViewById(R.id.tvShowWater);
         showExercise = (TextView)findViewById(R.id.tvShowExercise);
         //
-        calFromTrack();
+
         goal = voUser.getGoal();
         consumed = voFoodRecord.getConsume();
         burned = voActivityRecord.getBurned();
+        calFromTrack();
         remaining = getRemain(goal,consumed,burned);
         water = voFoodRecord.getWater();
         exercise = voActivityRecord.getMinute();
@@ -214,10 +220,10 @@ public class MainActivity extends AppCompatActivity {
         mission2 = (TextView)findViewById(R.id.tvMission2);
         ckMission1 = (CheckBox) findViewById(R.id.cbMission1);
         ckMission2 = (CheckBox) findViewById(R.id.cbMission2);
-/*
+
         if(!isMyServiceRunning(TrackingProcess.class)) {
-            stopService(new Intent(MainActivity.this, TrackingProcess.class));
-        }*/
+            startService(new Intent(MainActivity.this, TrackingProcess.class));
+        }
         checkCountMission();
         setMission();
         checkCompleteMission();
@@ -254,7 +260,6 @@ public class MainActivity extends AppCompatActivity {
             else  if(str2[0].equals("3")){
                 condition = Integer.parseInt(exercise);
                 missionGoal = Integer.parseInt(detail1);
-                Log.i("data3",condition +  "Condition/mission " + missionGoal);
                 if(condition > missionGoal ){
                     voMissionSystem.updateState(str[0]);
                     ckMission1.setChecked(true);
@@ -263,7 +268,6 @@ public class MainActivity extends AppCompatActivity {
             else  if(str2[0].equals("4")){
                 condition = Integer.parseInt(burned);
                 missionGoal = Integer.parseInt(detail1);
-                Log.i("data4",condition +  "Condition/mission " + missionGoal);
                 if(condition > missionGoal ){
                     voMissionSystem.updateState(str[0]);
                     ckMission1.setChecked(true);
@@ -295,7 +299,6 @@ public class MainActivity extends AppCompatActivity {
             else  if(str2[1].equals("3")){
                 condition = Integer.parseInt(exercise);
                 missionGoal = Integer.parseInt(detail2);
-                Log.i("data30",condition +  "Condition/mission " + missionGoal);
                 if(condition > missionGoal ){
                     secondMission =1;
                     voMissionSystem.updateState(str[1]);
@@ -305,7 +308,6 @@ public class MainActivity extends AppCompatActivity {
             else  if(str2[1].equals("4")){
                 condition = Integer.parseInt(burned);
                 missionGoal = Integer.parseInt(detail2);
-                Log.i("data40",condition +  "Condition/mission " + missionGoal);
                 if(condition > missionGoal ){
                     secondMission =1;
                     voMissionSystem.updateState(str[1]);
@@ -424,10 +426,12 @@ public class MainActivity extends AppCompatActivity {
         bike = Integer.parseInt(track.getBikingTime());
         }
         calTrack = (walk/60000)*2 + (run/60000)*8 + (bike/60000)*6;
+        int preburn = Integer.parseInt(burned) + calTrack;
+        burned = String.valueOf(preburn);
     }
 
     public String getRemain(String goal,String consumed, String burned){
-        int remain = Integer.parseInt(goal) - Integer.parseInt(consumed) + Integer.parseInt(burned) + calTrack;
+        int remain = Integer.parseInt(goal) - Integer.parseInt(consumed) + Integer.parseInt(burned);
         if (remain < 0) {
             showRemaining = (TextView) findViewById(R.id.tvShowRemaining);
             showRemaining.setTextColor(Color.RED);

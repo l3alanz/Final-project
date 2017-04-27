@@ -291,7 +291,7 @@ public class Database extends SQLiteOpenHelper {
                 Tracking.Column.drivingTime,
                 Tracking.Column.updatedDate);
         db.execSQL(CREATE_TRACKING_TABLE);
-
+/*
         db.execSQL("INSERT INTO " + Tracking.TABLE_NAME
                 + " (" + Tracking.Column.stillTime + ","
                 + Tracking.Column.walkingTime + ","
@@ -299,7 +299,7 @@ public class Database extends SQLiteOpenHelper {
                 + Tracking.Column.bikingTime + ","
                 + Tracking.Column.drivingTime  + ") VALUES ('" + 0
                 + "', " + 0+ ", " + 0 + "," + 0
-                + ", " + 0+ ");");
+                + ", " + 0+ ");");*/
     }
 
     @Override
