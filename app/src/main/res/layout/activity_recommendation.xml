@@ -8,255 +8,204 @@
     tools:context="com.example.nicha.finalproject.FoodFactActivity">
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <RelativeLayout
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="120dp"
+                android:background="@drawable/bg_recommendation" />
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:background="@drawable/bg_recommendation" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#ffffff"
-                    android:text="Recommendation"
-                    android:layout_marginTop="20dp"
-                    android:layout_centerHorizontal="true"
-                    android:textSize="25dp"/>
-
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Breakfast"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textColor="#000000"/>
+                android:textColor="#ffffff"
+                android:text="Recommendation"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:textSize="25dp"/>
 
 
-            </RelativeLayout>
+        </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp">
+                android:text="Breakfast"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#000000"/>
 
-                <TextView
-                    android:id="@+id/tvRecBreakfast1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="16dp"
-                    android:layout_marginLeft="26dp"
-                    android:text="Recommended breakfast1" />
 
-                <TextView
-                    android:id="@+id/tvRecBrekfastAmount1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16dp"
-                    android:layout_alignParentRight="true"
-                    android:textColor="#000000"
-                    android:text="amount" />
+        </RelativeLayout>
 
-            </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tvRecBreakfast1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="3dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
+                android:textColor="#000000"
+                android:textSize="16dp"
+                android:layout_marginLeft="26dp"
+                android:text="Recommended breakfast1" />
 
-                <TextView
-                    android:id="@+id/tvRecBreakfast2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:layout_marginLeft="26dp"
-                    android:textSize="16dp"
-                    android:text="Rocommended breakfast2" />
+        </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/tvRecBrekfastAmount2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:textColor="#000000"
-                    android:textSize="16dp"
-                    android:text="amount" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
 
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tvRecBreakfast2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="10dp">
+                android:textColor="#000000"
+                android:layout_marginLeft="26dp"
+                android:textSize="16dp"
+                android:text="Rocommended breakfast2" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:text="Lunch" />
+        </RelativeLayout>
 
-            </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="10dp">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp">
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Lunch" />
 
-                <TextView
-                    android:id="@+id/tvRecLunch1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="16dp"
-                    android:layout_marginLeft="26dp"
-                    android:text="Recommendation lunch1" />
+        </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/tvRecLunchAmount1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:textColor="#000000"
-                    android:textSize="16dp"
-                    android:text="amount" />
-            </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tvRecLunch1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="3dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
+                android:textColor="#000000"
+                android:textSize="16dp"
+                android:layout_marginLeft="26dp"
+                android:text="Recommendation lunch1" />
 
-                <TextView
-                    android:id="@+id/tvRecLunch2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="16dp"
-                    android:layout_marginLeft="26dp"
-                    android:text="Recommendation Lunch2" />
+        </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/tvRecLunchAmount2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:textSize="16dp"
-                    android:textColor="#000000"
-                    android:text="amount" />
-            </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tvRecLunch2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="10dp">
+                android:textColor="#000000"
+                android:textSize="16dp"
+                android:layout_marginLeft="26dp"
+                android:text="Recommendation Lunch2" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:text="Dinner" />
+        </RelativeLayout>
 
-            </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="10dp">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp">
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Dinner" />
 
-                <TextView
-                    android:id="@+id/tvRecDinner1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:layout_marginLeft="26dp"
-                    android:textSize="16dp"
-                    android:text="Recommended dinner1" />
+        </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/tvRecDinnerAmount1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:textColor="#000000"
-                    android:textSize="16dp"
-                    android:text="amount" />
-            </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tvRecDinner1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="3dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
+                android:textColor="#000000"
+                android:layout_marginLeft="26dp"
+                android:textSize="16dp"
+                android:text="Recommended dinner1" />
 
-                <TextView
-                    android:id="@+id/tvRecDinner2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:layout_marginLeft="26dp"
-                    android:textSize="16dp"
-                    android:text="Recommended dinner2" />
+        </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/tvRecDinnerAmount2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:textColor="#000000"
-                    android:textSize="16dp"
-                    android:text="amount" />
-            </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <TextView
+                android:id="@+id/tvRecDinner2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:layout_marginLeft="26dp"
+                android:textSize="16dp"
+                android:text="Recommended dinner2" />
+
+        </RelativeLayout>
 
 
 
 
-        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

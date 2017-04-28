@@ -11,6 +11,7 @@ import com.example.nicha.finalproject.Model.ActivityRecord;
 import com.example.nicha.finalproject.Model.Dewy;
 import com.example.nicha.finalproject.Model.FoodData;
 import com.example.nicha.finalproject.Model.FoodRecord;
+import com.example.nicha.finalproject.Model.MissionSystem;
 import com.example.nicha.finalproject.Model.Tracking;
 import com.example.nicha.finalproject.Model.User;
 
@@ -266,6 +267,18 @@ public class Database extends SQLiteOpenHelper {
                 Dewy.Column.dewyState);
         db.execSQL(CREATE_DEWY_TABLE);
 
+        // Create Mission System
+        String CREATE_MISSION_TABLE = String.format("CREATE TABLE %s " +
+                        "(%s INTEGER PRIMARY KEY  AUTOINCREMENT, %s TEXT, %s INTEGER, %s INTEGER, %s INTEGER,  %s DATE DEFAULT (DATE(CURRENT_TIMESTAMP,'localtime')))",
+                MissionSystem.TABLE_NAME,
+                MissionSystem.Column.id,
+                MissionSystem.Column.missionName,
+                MissionSystem.Column.missionDetail,
+                MissionSystem.Column.missionType,
+                MissionSystem.Column.missionState,
+                Tracking.Column.updatedDate);
+        db.execSQL(CREATE_MISSION_TABLE);
+
         //Create Tracking
         String CREATE_TRACKING_TABLE = String.format("CREATE TABLE %s " +
         "(%s INTEGER PRIMARY KEY  AUTOINCREMENT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s DATE DEFAULT (DATE(CURRENT_TIMESTAMP,'localtime')))",
@@ -278,7 +291,7 @@ public class Database extends SQLiteOpenHelper {
                 Tracking.Column.drivingTime,
                 Tracking.Column.updatedDate);
         db.execSQL(CREATE_TRACKING_TABLE);
-
+/*
         db.execSQL("INSERT INTO " + Tracking.TABLE_NAME
                 + " (" + Tracking.Column.stillTime + ","
                 + Tracking.Column.walkingTime + ","
@@ -286,7 +299,7 @@ public class Database extends SQLiteOpenHelper {
                 + Tracking.Column.bikingTime + ","
                 + Tracking.Column.drivingTime  + ") VALUES ('" + 0
                 + "', " + 0+ ", " + 0 + "," + 0
-                + ", " + 0+ ");");
+                + ", " + 0+ ");");*/
     }
 
     @Override
@@ -298,6 +311,7 @@ public class Database extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + User.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + Dewy.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + Tracking.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + MissionSystem.TABLE_NAME);
         onCreate(db);
     }
     public List<String> getActivityDataList(){

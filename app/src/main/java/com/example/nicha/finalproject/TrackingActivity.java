@@ -159,7 +159,6 @@ public class TrackingActivity extends AppCompatActivity {
         tvBike = (TextView) findViewById(R.id.tvBike);
         tvDrive = (TextView) findViewById(R.id.tvDrive);
         voTracking = new TrackingService(this);
-
         track = voTracking.getTrack();
         stillTime = Long.parseLong(track.getStillTime());
         walkingTime = Long.parseLong(track.getWalkingTime());
@@ -198,8 +197,8 @@ public class TrackingActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-       /* if(isMyServiceRunning(TrackingProcess.class)) {
-            stopService(new Intent(TrackingActivity.this, TrackingProcess.class));*/
+        if(isMyServiceRunning(TrackingProcess.class)) {
+            stopService(new Intent(TrackingActivity.this, TrackingProcess.class));
             //getTrack();
             track = voTracking.getTrack();
             stillTime = Long.parseLong(track.getStillTime());
@@ -218,7 +217,7 @@ public class TrackingActivity extends AppCompatActivity {
             runningMillis = runningTime;
             bikingMillis = bikingTime;
             drivingMillis = drivingTime;
-        //}
+        }
 
         setupFence(DetectedActivityFence.RUNNING,"Running");
         setupFence(DetectedActivityFence.ON_BICYCLE,"Biking");
@@ -254,7 +253,7 @@ public class TrackingActivity extends AppCompatActivity {
         handlerdrivingMillis.removeCallbacks(rundrivingMillis);
         handlerstillMillis.removeCallbacks(runstillMillis);
         unregisterReceiver(mFenceReceiver);
-       // startService(new Intent(TrackingActivity.this, TrackingProcess.class));
+       startService(new Intent(TrackingActivity.this, TrackingProcess.class));
         //updateTrack();
 
     }

@@ -42,7 +42,6 @@ public class TrackingService {
             track.setDrivingTime(cursor.getString(4));
             cursor.moveToNext();
         }
-
         mDb.close();
         mHelper.close();
         return track;
@@ -60,27 +59,34 @@ public class TrackingService {
     }
 */
 
-    public void checkData(){
-        mDb = mHelper.getWritableDatabase();
-        Cursor cursor = mDb.rawQuery("SELECT " + Tracking.Column.updatedDate
-                + " FROM " + Tracking.TABLE_NAME +
-                " WHERE " + Tracking.Column.updatedDate + " = date('now','localtime')",null);
+    public int checkData(){
+        int count = 0;
+        mDb = mHelper.getReadableDatabase();
+        Cursor cursor = mDb.rawQuery("SELECT Count(*) " +
+                " FROM " + Tracking.TABLE_NAME  + " WHERE " + Tracking.Column.updatedDate + " = date('now','localtime')", null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
         while ( !cursor.isAfterLast() ){
-            if(cursor.getString(0) == null){
-                mDb.execSQL("INSERT INTO " + Tracking.TABLE_NAME
-                        + " (" + Tracking.Column.stillTime + ","
-                        + Tracking.Column.walkingTime + ","
-                        + Tracking.Column.runningTime + ","
-                        + Tracking.Column.bikingTime + ","
-                        + Tracking.Column.drivingTime  + ") VALUES ('" + 0
-                        + "', " + 0+ ", " + 0 + "," + 0
-                        + ", " + 0+ ");");
-            }
+            count = Integer.parseInt(cursor.getString(0));
             cursor.moveToNext();
         }
+
+        mDb.close();
+        mHelper.close();
+        return count;
+    }
+
+    public void createData(){
+        mDb = mHelper.getWritableDatabase();
+        mDb.execSQL("INSERT INTO " + Tracking.TABLE_NAME
+                + " (" + Tracking.Column.stillTime + ","
+                + Tracking.Column.walkingTime + ","
+                + Tracking.Column.runningTime + ","
+                + Tracking.Column.bikingTime + ","
+                + Tracking.Column.drivingTime  + ") VALUES ('" + 0
+                + "', " + 0+ ", " + 0 + "," + 0
+                + ", " + 0+ ");");
 
         mDb.close();
         mHelper.close();
