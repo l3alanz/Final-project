@@ -23,8 +23,10 @@ public class DewyActivity extends AppCompatActivity {
     private ProgressBar pgExp = null;
     private int i = 0;
     private int j = 1;
+    public int k = 5;
     TextView tvLevel;
     ImageView ivHeart;
+    TextView tvFoodDewy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,20 +35,12 @@ public class DewyActivity extends AppCompatActivity {
         pgExp = (ProgressBar)findViewById(R.id.pgExp);
         tvLevel = (TextView) findViewById(R.id.tvLevel);
         ivHeart = (ImageView) findViewById(R.id.ivHeart);
+        tvFoodDewy = (TextView) findViewById(R.id.tvFoodDewy);
         ivHeart.setVisibility(View.GONE);
+        tvFoodDewy.setText("x"+k);
         tvLevel.setText("Lv "+j);
         pgExp.setMax(100);
-//        egg = (ImageView) findViewById(R.id.egg);
         monster = (ImageView) findViewById(R.id.monster);
-//
-//        egg.post(new Runnable() {
-//
-//            @Override
-//            public void run() {
-//                ((AnimationDrawable) egg.getBackground()).start();
-//            }
-//
-//        });
         monster.post(new Runnable() {
 
             @Override
@@ -64,6 +58,7 @@ public class DewyActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
+                if(k>1)
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN: {
                         ImageButton view = (ImageButton ) v;
@@ -80,6 +75,23 @@ public class DewyActivity extends AppCompatActivity {
                             i = 0;
                             j ++;
                         }
+
+                        if(j > 4){
+                            monster.setBackgroundResource(R.drawable.mons);
+                            monster.post(new Runnable() {
+
+                                @Override
+                                public void run() {
+                                    ((AnimationDrawable) monster.getBackground()).start();
+                                }
+
+                            });
+                        }
+                        k--;
+                        tvFoodDewy.setText("x"+k);
+
+
+
 
                     // for updating level of Dewy
 
@@ -99,6 +111,7 @@ public class DewyActivity extends AppCompatActivity {
                     }
                 }
                 return true;
+
             }
 
         });

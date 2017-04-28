@@ -32,6 +32,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/tvFoodDewy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="x"
+            android:layout_marginRight="32dp"
+            android:layout_below="@+id/btnFeed"
+            android:layout_alignParentRight="true"
+            android:textSize="18dp"
+            android:textColor="#ffffff"/>
+
         <ImageButton
             android:id="@+id/btnFeed"
             android:layout_width="wrap_content"
@@ -57,9 +68,11 @@
             android:id="@+id/monster"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/mons"
+            android:background="@drawable/egg"
             android:layout_centerInParent="true"
             android:layout_centerHorizontal="true" />
+
+
 
         <ImageView
             android:id="@+id/ivHeart"
