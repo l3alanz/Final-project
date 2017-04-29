@@ -143,7 +143,7 @@ public class MissionSystemService {
         return typed;
     }
 
-    public void createMission(int type, String consumed){
+    public void createMission(int type){
         String name;
         int detail;
         int state = 0;
@@ -151,12 +151,10 @@ public class MissionSystemService {
         int ran;
 
         if(type == 1){
-            name = "Consume less than ";
+            name = "Consume between goal as ";
             range = (200 - 100) + 1;
             ran =(int) (Math.random() * range) + 100;
-            if ((ran % 3) == 0)
-                ran = ran * (-1);
-            detail = Integer.parseInt(consumed)+ ran;
+            detail = ran;
         }
         else if(type == 2){
             name = "Drink water ";
