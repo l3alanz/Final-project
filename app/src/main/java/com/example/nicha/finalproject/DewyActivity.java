@@ -14,6 +14,9 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.nicha.finalproject.Model.Dewy;
+import com.example.nicha.finalproject.Service.DewyService;
+
 
 public class DewyActivity extends AppCompatActivity {
 
@@ -27,6 +30,8 @@ public class DewyActivity extends AppCompatActivity {
     TextView tvLevel;
     ImageView ivHeart;
     TextView tvFoodDewy;
+    DewyService voDewyService;
+    Dewy voDewy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +41,16 @@ public class DewyActivity extends AppCompatActivity {
         tvLevel = (TextView) findViewById(R.id.tvLevel);
         ivHeart = (ImageView) findViewById(R.id.ivHeart);
         tvFoodDewy = (TextView) findViewById(R.id.tvFoodDewy);
+        voDewyService = new DewyService(this);
+        voDewy = voDewyService.getDewy();
+        i = voDewy.getDewyEXP();
+        j = voDewy.getDewyLevel();
+        k = voDewy.getDewyFood();
         ivHeart.setVisibility(View.GONE);
         tvFoodDewy.setText("x"+k);
         tvLevel.setText("Lv "+j);
         pgExp.setMax(100);
+        pgExp.setProgress(i);
         monster = (ImageView) findViewById(R.id.monster);
         monster.post(new Runnable() {
 
@@ -58,7 +69,7 @@ public class DewyActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
-                if(k>1)
+                if(k>0)
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN: {
                         ImageButton view = (ImageButton ) v;
@@ -115,6 +126,16 @@ public class DewyActivity extends AppCompatActivity {
             }
 
         });
+
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        voDewy.setDewyLevel(j);
+        voDewy.setDewyFood(k);
+        voDewy.setDewyEXP(i);
+        voDewyService.updateDewy(voDewy);
 
     }
 }

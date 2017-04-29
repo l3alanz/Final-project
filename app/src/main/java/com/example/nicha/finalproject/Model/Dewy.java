@@ -14,23 +14,27 @@ public class Dewy {
     public class Column{
         public static final String id = BaseColumns._ID;
         public static final String dewyName = "dewyName";
-        public static final String dewyHungry = "dewyHungry";
+        public static final String dewyLevel = "dewyLevel";
         public static final String dewyFood = "dewyFood";
-        public static final String dewyState = "dewyState";
+        public static final String dewyEXP = "dewyEXP";
     }
 
     private int id;
     private String dewyName;
-    private int dewyHungry;
+    private int dewyLevel;
     private int dewyFood;
-    private int dewyState;
+    private int dewyEXP;
 
-    public Dewy(int id, String dewyName, int dewyHungry, int dewyFood, int dewyState) {
+    public Dewy(int id, String dewyName, int dewyLevel, int dewyFood, int dewyEXP) {
         this.id = id;
         this.dewyName = dewyName;
-        this.dewyHungry = dewyHungry;
+        this.dewyLevel = dewyLevel;
         this.dewyFood = dewyFood;
-        this.dewyState = dewyState;
+        this.dewyEXP = dewyEXP;
+    }
+
+    public Dewy() {
+
     }
 
     public int getId() {
@@ -49,12 +53,12 @@ public class Dewy {
         this.dewyName = dewyName;
     }
 
-    public int getDewyHungry() {
-        return dewyHungry;
+    public int getDewyLevel() {
+        return dewyLevel;
     }
 
-    public void setDewyHungry(int dewyHungry) {
-        this.dewyHungry = dewyHungry;
+    public void setDewyLevel(int dewyLevel) {
+        this.dewyLevel = dewyLevel;
     }
 
     public int getDewyFood() {
@@ -65,11 +69,11 @@ public class Dewy {
         this.dewyFood = dewyFood;
     }
 
-    public int getDewyState() {
-        return dewyState;
+    public int getDewyEXP() {
+        return dewyEXP;
     }
 
-    public void setDewyState(int dewyState) {
-        this.dewyState = dewyState;
+    public void setDewyEXP(int dewyEXP) {
+        this.dewyEXP = dewyEXP;
     }
 }

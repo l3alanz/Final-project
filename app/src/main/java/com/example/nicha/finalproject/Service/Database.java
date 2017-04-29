@@ -262,10 +262,18 @@ public class Database extends SQLiteOpenHelper {
                 Dewy.TABLE_NAME,
                 Dewy.Column.id,
                 Dewy.Column.dewyName,
-                Dewy.Column.dewyHungry,
+                Dewy.Column.dewyLevel,
                 Dewy.Column.dewyFood,
-                Dewy.Column.dewyState);
+                Dewy.Column.dewyEXP);
         db.execSQL(CREATE_DEWY_TABLE);
+
+        db.execSQL("INSERT INTO " + Dewy.TABLE_NAME
+                + " (" + Dewy.Column.dewyName + ","
+                + Dewy.Column.dewyLevel + ","
+                + Dewy.Column.dewyFood + ","
+                + Dewy.Column.dewyEXP  + ") VALUES ('DEWY'"
+                + ", " + 4+ "," + 5
+                + ", " + 0+ ");");
 
         // Create Mission System
         String CREATE_MISSION_TABLE = String.format("CREATE TABLE %s " +

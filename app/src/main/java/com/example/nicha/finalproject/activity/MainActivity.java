@@ -26,6 +26,7 @@ import com.example.nicha.finalproject.Model.Tracking;
 import com.example.nicha.finalproject.R;
 import com.example.nicha.finalproject.RecommendationActivity;
 import com.example.nicha.finalproject.Service.ActivityRecordService;
+import com.example.nicha.finalproject.Service.DewyService;
 import com.example.nicha.finalproject.Service.FoodRecordService;
 import com.example.nicha.finalproject.Service.MissionSystemService;
 import com.example.nicha.finalproject.Service.TrackingProcess;
@@ -74,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
     List<String> typeList;
     String detail1;
     String detail2;
+    DewyService voDewyService;
 
 
     @Override
@@ -87,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         voTracking = new TrackingService(this);
         voTracking.checkData();
         voMissionSystem = new MissionSystemService(this);
+        voDewyService = new DewyService(this);
 
         Button btnGoSetting;
         Button btnGoSummary;
@@ -246,6 +249,7 @@ public class MainActivity extends AppCompatActivity {
                 if(condition < missionGoal && condition > subcon){
                     voMissionSystem.updateState(str[0]);
                     ckMission1.setChecked(true);
+                    voDewyService.gainDewyFood();
                 }
 
             }
@@ -255,6 +259,7 @@ public class MainActivity extends AppCompatActivity {
                 if(condition > missionGoal ){
                     voMissionSystem.updateState(str[0]);
                     ckMission1.setChecked(true);
+                    voDewyService.gainDewyFood();
                 }
             }
             else  if(str2[0].equals("3")){
@@ -263,6 +268,7 @@ public class MainActivity extends AppCompatActivity {
                 if(condition > missionGoal ){
                     voMissionSystem.updateState(str[0]);
                     ckMission1.setChecked(true);
+                    voDewyService.gainDewyFood();
                 }
             }
             else  if(str2[0].equals("4")){
@@ -271,6 +277,7 @@ public class MainActivity extends AppCompatActivity {
                 if(condition > missionGoal ){
                     voMissionSystem.updateState(str[0]);
                     ckMission1.setChecked(true);
+                    voDewyService.gainDewyFood();
                 }
             }
         }
@@ -284,6 +291,7 @@ public class MainActivity extends AppCompatActivity {
                     secondMission =1;
                     voMissionSystem.updateState(str[1]);
                     ckMission2.setChecked(true);
+                    voDewyService.gainDewyFood();
                 }
 
             }
@@ -294,6 +302,7 @@ public class MainActivity extends AppCompatActivity {
                     secondMission =1;
                     voMissionSystem.updateState(str[1]);
                     ckMission2.setChecked(true);
+                    voDewyService.gainDewyFood();
                 }
             }
             else  if(str2[1].equals("3")){
@@ -303,6 +312,7 @@ public class MainActivity extends AppCompatActivity {
                     secondMission =1;
                     voMissionSystem.updateState(str[1]);
                     ckMission2.setChecked(true);
+                    voDewyService.gainDewyFood();
                 }
             }
             else  if(str2[1].equals("4")){
@@ -312,6 +322,7 @@ public class MainActivity extends AppCompatActivity {
                     secondMission =1;
                     voMissionSystem.updateState(str[1]);
                     ckMission2.setChecked(true);
+                    voDewyService.gainDewyFood();
                 }
             }
         }
