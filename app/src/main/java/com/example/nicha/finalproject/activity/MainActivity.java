@@ -412,7 +412,7 @@ public class MainActivity extends AppCompatActivity {
         while (counter < 2){
             int ran = (int) (Math.random() * range) + 1;
             if(ran!= temp){
-                voMissionSystem.createMission(ran,consumed);
+                voMissionSystem.createMission(ran);
                 counter++;
                 temp = ran;
             }
