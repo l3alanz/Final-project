@@ -343,7 +343,7 @@ public class MainActivity extends AppCompatActivity {
             ckMission2.setChecked(true);
         }
         else{
-            ckMission1.setChecked(false);
+            ckMission2.setChecked(false);
         }
         nameList = voMissionSystem.getNames();
         if(nameList != null) {
