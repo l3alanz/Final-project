@@ -89,7 +89,7 @@
                             android:textSize="16sp"
                             android:textColor="#ffffff"
                             android:layout_marginTop="2dp"
-                            android:text="Goal"/>
+                            android:text="Goal (KCAL)"/>
 
                         <TextView
                             android:id="@+id/tvShowBurned"
@@ -111,7 +111,7 @@
                             android:layout_below="@id/tvShowBurned"
                             android:layout_alignParentRight="true"
                             android:layout_marginTop="2dp"
-                            android:text="Burned"/>
+                            android:text="Burned (KCAL)"/>
 
                         <TextView
                             android:id="@+id/tvShowConsumed"
@@ -131,7 +131,7 @@
                             android:textColor="#ffffff"
                             android:layout_below="@id/tvGoal"
                             android:layout_marginTop="60dp"
-                            android:text="Consumed"/>
+                            android:text="Consumed (KCAL)"/>
 
                         <TextView
                             android:id="@+id/tvShowRemaining"
@@ -153,7 +153,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_below="@id/tvBurned"
                             android:layout_marginTop="60dp"
-                            android:text="Remaining"/>
+                            android:text="Remaining (KCAL)"/>
 
                         <TextView
                             android:id="@+id/tvWater"
@@ -163,7 +163,7 @@
                             android:textColor="#ffffff"
                             android:layout_below="@id/tvConsumed"
                             android:layout_marginTop="60dp"
-                            android:text="Water"/>
+                            android:text="Water (Glasses)"/>
 
                         <TextView
                             android:id="@+id/tvShowExercise"
@@ -185,7 +185,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_below="@id/tvRemain"
                             android:layout_marginTop="60dp"
-                            android:text="Exercise"/>
+                            android:text="Exercise (Min.)"/>
 
                         <TextView
                             android:id="@+id/tvShowWater"
